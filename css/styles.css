@@ -396,3 +396,8 @@ footer a:hover {
   height: 3px;
   background-color: rgba(252, 71, 48, 1);
 }
+
+/* target all FA icons */
+.fa, .fas, .far, .fal, .fab {
+  color: #E53E3E;
+}
