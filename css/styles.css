@@ -146,7 +146,7 @@ h5 {
 
   /* DESKTOP: lock fills 80% of the hero height */
   background-size: auto 80%;
-  /* move lock in to ~70% of width, vertically centered */
+  /* sit just past ~70% of the container width */
   background-position: 70% center;
 
   position: relative;
@@ -196,21 +196,18 @@ h5 {
 /* Mobile */
 @media (max-width: 767px) {
   .hero {
-    /* more top padding so heading clears the lock */
-    padding: 240px 0 80px;
+    /* bump the text further down */
+    padding: 260px 0 80px;
 
-    /* switch to mobile graphic */
+    /* swap in your mobile graphic */
     background-image: url('../images/background_mobile.webp');
     background-repeat: no-repeat;
 
-    /* nearly full height for prominence */
+    /* make lock almost fill hero height */
     background-size: auto 95%;
 
-    /*
-      move it down 140px so it sits below your h5,
-      and pull it in horizontally to ~90% so it’s closer to the text
-    */
-    background-position: 90% 140px;
+    /* pin it to the absolute right edge, 180px from the top */
+    background-position: 100% 180px;
 
     background-color: #FCF7EF;
   }
@@ -218,6 +215,7 @@ h5 {
     font-size: 34px;
   }
 }
+
 
 /* Features Grid */
 .features {
