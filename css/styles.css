@@ -62,9 +62,16 @@ nav a {
   color: var(--color-primary);
   transition: color 0.2s ease;
 }
-nav a:hover {
-  color: var(--color-secondary);
+/* Smooth transition on all nav links */
+nav a {
+  transition: color 0.2s ease;
 }
+
+/* Change to red on hover */
+nav a:hover {
+  color: rgba(252, 71, 48, 1);  /* or use #E53E3E */
+}
+
 
 /* Utility */
 .container {
