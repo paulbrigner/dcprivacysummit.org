@@ -137,7 +137,6 @@ h3 {
 h5 {
   color: #ee392c;
 }
-
 /* Hero */
 .hero {
   background-color: #FCF7EF;
@@ -146,8 +145,8 @@ h5 {
 
   /* DESKTOP: lock fills 80% of the hero height */
   background-size: auto 80%;
-  /* sit just past ~70% of the container width */
-  background-position: 70% center;
+  /* Position lock to the right and slightly below center */
+  background-position: 80% 60%;
 
   position: relative;
   color: var(--color-primary);
@@ -186,7 +185,8 @@ h5 {
   .hero {
     padding: 200px 0 120px;
     background-size: cover;
-    background-position: center center;
+    /* Adjust position for tablet */
+    background-position: 85% 65%;
   }
   .hero h2 {
     font-size: 42px;
@@ -206,8 +206,8 @@ h5 {
     /* make lock almost fill hero height */
     background-size: auto 95%;
 
-    /* pin it to the absolute right edge, 180px from the top */
-    background-position: 100% 180px;
+    /* pin it to the right edge, 200px from the top */
+    background-position: 100% 200px;
 
     background-color: #FCF7EF;
   }
@@ -215,22 +215,6 @@ h5 {
     font-size: 34px;
   }
 }
-
-
-/* Features Grid */
-.features {
-  display: grid;
-  gap: 40px;
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-
-@media (min-width: 768px) {
-  .features {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .feature {
   background-color: rgba(252, 247, 239, 1.00);
   padding: 40px;
