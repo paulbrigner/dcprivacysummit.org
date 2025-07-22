@@ -137,18 +137,16 @@ h3 {
 h5 {
   color: #ee392c;
 }
+
 /* Hero */
 .hero {
-  /* base off-white */
   background-color: #FCF7EF;
-
-  /* full-bleed lock graphic */
   background-image: url('../images/background.webp');
   background-repeat: no-repeat;
 
-  /* DESKTOP: lock’s height fills 80% of hero, width auto */
+  /* DESKTOP: lock fills 80% of the hero height */
   background-size: auto 80%;
-  /* push the lock in to about 70% of the container’s width */
+  /* move lock in to ~70% of width, vertically centered */
   background-position: 70% center;
 
   position: relative;
@@ -187,8 +185,6 @@ h5 {
 @media (max-width: 1024px) {
   .hero {
     padding: 200px 0 120px;
-
-    /* switch to cover so it still fills the width */
     background-size: cover;
     background-position: center center;
   }
@@ -200,18 +196,21 @@ h5 {
 /* Mobile */
 @media (max-width: 767px) {
   .hero {
-    /* drop heading below the lock */
-    padding: 220px 0 80px;
+    /* more top padding so heading clears the lock */
+    padding: 240px 0 80px;
 
-    /* mobile-specific graphic */
+    /* switch to mobile graphic */
     background-image: url('../images/background_mobile.webp');
     background-repeat: no-repeat;
 
-    /* lock tall enough to be prominent */
-    background-size: auto 90%;
+    /* nearly full height for prominence */
+    background-size: auto 95%;
 
-    /* move it down out of the way of the text */
-    background-position: right 60px;
+    /*
+      move it down 140px so it sits below your h5,
+      and pull it in horizontally to ~90% so it’s closer to the text
+    */
+    background-position: 90% 140px;
 
     background-color: #FCF7EF;
   }
@@ -227,11 +226,13 @@ h5 {
   margin-top: 40px;
   margin-bottom: 60px;
 }
+
 @media (min-width: 768px) {
   .features {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 .feature {
   background-color: rgba(252, 247, 239, 1.00);
   padding: 40px;
