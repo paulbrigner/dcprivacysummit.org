@@ -137,17 +137,19 @@ h3 {
 h5 {
   color: #ee392c;
 }
-
 /* Hero */
 .hero {
   /* base off-white */
   background-color: #FCF7EF;
 
-  /* desktop graphic */
+  /* full-bleed lock graphic */
   background-image: url('../images/background.webp');
   background-repeat: no-repeat;
-  background-position: 80% center;     /* nudge it closer to text on desktop */
-  background-size: auto 90%;           /* fill 90% of hero height */
+
+  /* DESKTOP: lock’s height fills 80% of hero, width auto */
+  background-size: auto 80%;
+  /* push the lock in to about 70% of the container’s width */
+  background-position: 70% center;
 
   position: relative;
   color: var(--color-primary);
@@ -185,6 +187,8 @@ h5 {
 @media (max-width: 1024px) {
   .hero {
     padding: 200px 0 120px;
+
+    /* switch to cover so it still fills the width */
     background-size: cover;
     background-position: center center;
   }
@@ -196,18 +200,18 @@ h5 {
 /* Mobile */
 @media (max-width: 767px) {
   .hero {
-    /* give more top padding so the text sits below the logo */
+    /* drop heading below the lock */
     padding: 220px 0 80px;
 
-    /* swap to mobile graphic */
+    /* mobile-specific graphic */
     background-image: url('../images/background_mobile.webp');
     background-repeat: no-repeat;
 
-    /* make the lock taller so it’s prominent */
-    background-size: auto 95%;
+    /* lock tall enough to be prominent */
+    background-size: auto 90%;
 
-    /* center it vertically underneath the nav and push it down further */
-    background-position: right 50%;
+    /* move it down out of the way of the text */
+    background-position: right 60px;
 
     background-color: #FCF7EF;
   }
