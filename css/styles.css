@@ -226,16 +226,41 @@ h5 {
     padding-right: 0;
   }
 }
+/* --- NEW STYLES FOR THE GRID --- */
 
+/* This is the container for your feature blocks */
+.features {
+  display: grid;
+  /* Create two equal-width columns */
+  grid-template-columns: repeat(2, 1fr);
+  /* Add spacing between the grid items */
+  gap: 30px;
+}
+
+/* --- RESPONSIVE ADJUSTMENT FOR MOBILE --- */
+@media (max-width: 767px) {
+  .features {
+    /* Switch to a single column on smaller screens */
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* --- YOUR EXISTING STYLES (for context) --- */
 .feature {
   background-color: rgba(252, 247, 239, 1.00);
   padding: 40px;
+  border-radius: 8px; /* Optional: adds rounded corners */
 }
+
 .feature h3 {
   color: var(--color-secondary);
   margin-bottom: 10px;
+  /* Changed to padding-bottom to keep the line inside the padding */
+  padding-bottom: 10px;
   border-bottom: 2px solid #E53E3E;
 }
+
 .feature p {
   color: #000000;
 }
@@ -439,6 +464,16 @@ footer a:hover {
   width: 75px;
   height: 3px;
   background-color: rgba(252, 71, 48, 1);
+}
+
+@media (max-width: 767px) {
+  .lined-heading {
+    /* Change the flex direction to stack items vertically */
+    flex-direction: column;
+
+    /* Align items to the start (left) of the container */
+    align-items: flex-start;
+  }
 }
 
 /* target all FA icons */
