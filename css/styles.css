@@ -264,31 +264,48 @@ h5 {
 .feature p {
   color: #000000;
 }
-
 /* Team / Speaker Grid */
 .team-grid {
   display: grid;
-  gap: 40px;
+  /* CHANGE: Default to a 2-column grid for mobile */
+  grid-template-columns: repeat(2, 1fr);
+  /* CHANGE: Use a smaller gap for mobile */
+  gap: 20px;
   margin-top: 40px;
 }
+
+/* On tablets and larger, switch to the auto-fill column layout */
 @media (min-width: 768px) {
   .team-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    /* Restore the larger gap for desktop */
+    gap: 40px;
   }
 }
+
+/* ADDITION: Center the content within each card */
+.team-card {
+  text-align: center;
+}
+
 .team-card img {
   max-width: 220px;
+  /* ADDITION: Center the image horizontally */
+  margin-left: auto;
+  margin-right: auto;
   object-fit: contain;
   border: 2px solid rgba(252, 71, 48, 0.2);
   box-shadow: 0 0 8px rgba(252, 71, 48, 0.4);
   border-radius: 8px;
   display: block;
 }
+
 .team-card h4 {
   margin-top: 12px;
   font-size: 18px;
   color: var(--color-secondary);
 }
+
 .team-card p {
   font-size: 14px;
   color: black;
