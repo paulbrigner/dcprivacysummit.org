@@ -140,21 +140,37 @@ h5 {
 
 /* Hero */
 .hero {
-  background: url('../images/background.webp') center/cover no-repeat;
+  /* base off-white background */
+  background-color: #FCF7EF;
+
+  /* full-bleed lock graphic */
+  background-image: url('../images/background.webp');
+  background-repeat: no-repeat;
+
+  /* default desktop sizing & positioning */
+  /* make the lock’s height fill 90% of the hero, width auto */
+  background-size: auto 90%;
+  /* move it in from the very right edge to sit just to the right of the text */
+  background-position: 80% center;
+
   position: relative;
   color: var(--color-primary);
   padding: 260px 0 180px;
   text-align: left;
 }
+
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
+  /* keep as-is or add a semi-opaque overlay here */
 }
+
 .hero .content {
   position: relative;
   max-width: 640px;
 }
+
 .hero h5 {
   font-size: 15px;
   text-transform: uppercase;
@@ -162,31 +178,44 @@ h5 {
   margin-bottom: 20px;
   font-weight: 500;
 }
+
 .hero h2 {
   font-size: 55px;
   line-height: 1.15;
   margin-bottom: 30px;
   font-weight: 700;
 }
+
+/* ─── Tablet ─── */
 @media (max-width: 1024px) {
   .hero {
     padding: 200px 0 120px;
-    background-position: center;
+
+    /* switch to cover so it still fills the width */
+    background-size: cover;
+    background-position: center center;
   }
   .hero h2 {
     font-size: 42px;
   }
 }
+
+/* ─── Mobile ─── */
 @media (max-width: 767px) {
-  header .logo {
-    height: 40px;
-  }
-  nav ul {
-    display: none;
-  }
   .hero {
     padding: 160px 0 80px;
-    background: url('../images/background_mobile.webp') center/cover no-repeat;
+
+    /* mobile-specific graphic */
+    background-image: url('../images/background_mobile.webp');
+    background-repeat: no-repeat;
+
+    /* height-based sizing so the lock is tall enough */
+    background-size: auto 100%;
+
+    /* drop it down a bit so it doesn’t overlap text */
+    background-position: right 60px;
+
+    background-color: #FCF7EF;
   }
   .hero h2 {
     font-size: 34px;
