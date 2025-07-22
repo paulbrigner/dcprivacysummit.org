@@ -140,7 +140,7 @@ h5 {
 
 /* Hero */
 .hero {
-  background: url('../images/background-1.webp') center/cover no-repeat;
+  background: url('../images/background.webp') center/cover no-repeat;
   position: relative;
   color: var(--color-primary);
   padding: 260px 0 180px;
@@ -186,7 +186,7 @@ h5 {
   }
   .hero {
     padding: 160px 0 80px;
-    background: url('../images/background_mobile2-4.webp') center/cover no-repeat;
+    background: url('../images/background_mobile.webp') center/cover no-repeat;
   }
   .hero h2 {
     font-size: 34px;
