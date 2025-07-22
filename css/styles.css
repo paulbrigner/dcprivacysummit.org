@@ -137,16 +137,19 @@ h3 {
 h5 {
   color: #ee392c;
 }
+
+
+
 /* Hero */
 .hero {
   background-color: #FCF7EF;
   background-image: url('../images/background.webp');
   background-repeat: no-repeat;
 
-  /* DESKTOP: lock fills 80% of the hero height */
+  /* CHANGE: Position image to the far right, vertically centered. */
+  /* Using a viewport unit (vw) provides a scalable margin from the edge. */
+  background-position: right 5vw center;
   background-size: auto 80%;
-  /* Position lock to the right and slightly below center */
-  background-position: 80% 60%;
 
   position: relative;
   color: var(--color-primary);
@@ -163,6 +166,8 @@ h5 {
 .hero .content {
   position: relative;
   max-width: 640px;
+  /* ADDITION: Add padding to prevent text from ever touching the image area. */
+  padding-right: 40px;
 }
 
 .hero h5 {
@@ -184,9 +189,11 @@ h5 {
 @media (max-width: 1024px) {
   .hero {
     padding: 200px 0 120px;
-    background-size: cover;
-    /* Adjust position for tablet */
-    background-position: 85% 65%;
+
+    /* CHANGE: Keep the image to the right and reduce its size. */
+    /* Avoid 'cover', which caused overlap by filling the container. */
+    background-size: auto 65%;
+    background-position: right center;
   }
   .hero h2 {
     font-size: 42px;
@@ -196,25 +203,30 @@ h5 {
 /* Mobile */
 @media (max-width: 767px) {
   .hero {
-    /* bump the text further down */
-    padding: 260px 0 80px;
-
-    /* swap in your mobile graphic */
+    padding: 200px 0 80px; /* Reduced top padding for better balance */
     background-image: url('../images/background_mobile.webp');
     background-repeat: no-repeat;
-
-    /* make lock almost fill hero height */
-    background-size: auto 95%;
-
-    /* pin it to the right edge, 200px from the top */
-    background-position: 100% 200px;
-
     background-color: #FCF7EF;
+
+    /* --- KEY CHANGES FOR MOBILE --- */
+    
+    /* 1. CHANGE: Reduce image size to prevent horizontal overlap. */
+    /* Sizing by width (60%) is more predictable on narrow screens. */
+    background-size: 60% auto;
+
+    /* 2. CHANGE: Pin the image to the bottom right corner. */
+    /* This moves it cleanly below the text block, solving the overlap. */
+    background-position: right bottom;
   }
   .hero h2 {
     font-size: 34px;
   }
+  .hero .content {
+    /* Remove side padding on mobile if you want text to be full-width */
+    padding-right: 0;
+  }
 }
+
 .feature {
   background-color: rgba(252, 247, 239, 1.00);
   padding: 40px;
