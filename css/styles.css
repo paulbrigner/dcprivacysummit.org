@@ -178,7 +178,7 @@ h5 {
   font-weight: 500;
 }
 
-.hero h2 {
+.hero h1 {
   font-size: 55px;
   line-height: 1.15;
   margin-bottom: 30px;
@@ -195,7 +195,7 @@ h5 {
     background-size: auto 65%;
     background-position: right center;
   }
-  .hero h2 {
+  .hero h1 {
     font-size: 42px;
   }
 }
@@ -218,7 +218,7 @@ h5 {
     /* This moves it cleanly below the text block, solving the overlap. */
     background-position: right bottom;
   }
-  .hero h2 {
+  .hero h1 {
     font-size: 34px;
   }
   .hero .content {
