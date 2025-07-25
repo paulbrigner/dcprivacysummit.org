@@ -13,11 +13,46 @@
 <title>DC Privacy Summit – Where Privacy Innovation and Policy Converge</title>
 
 </head>
+	
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    navMenu.classList.toggle('active');
+  });
+</script>
+	
 <body>
 <!-- Header -->
 <header>
   <a href="/"><img src="images/dc-privacy-summit.svg" alt="DC Privacy Summit logo" class="logo"></a>
-  <nav aria-label="Main">
+  <nav aria-label="Main"><header>
+  <a href="/">
+    <img src="images/dc-privacy-summit.svg" alt="DC Privacy Summit logo" class="logo">
+  </a>
+
+  <!-- Hamburger icon -->
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav aria-label="Main" class="nav-menu">
+    <ul>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="./live-stream/index.html">2024 Videos</a></li>
+      <li><a href="https://lu.ma/dcprivacysummit2025" target="_blank" rel="noopener noreferrer">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
     <ul>
       <li><a href="#speakers">Speakers</a></li>
       <li><a href="#sponsors">Sponsors</a></li>

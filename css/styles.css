@@ -72,6 +72,68 @@ nav a:hover {
   color: rgba(252, 71, 48, 1);  /* or use #E53E3E */
 }
 
+/* Hamburger toggle button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Default nav styles */
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* MOBILE: Collapse nav, show hamburger */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: var(--color-dark);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 16px 20px;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
+
 
 /* Utility */
 .container {
