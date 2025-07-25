@@ -514,11 +514,25 @@ footer a:hover {
 }
 .lined-heading::before {
   content: "";
-  flex-shrink: 0;
   width: 75px;
   height: 3px;
   background-color: rgba(252, 71, 48, 1);
+  animation: lineGrow 0.6s ease-out forwards;
+  transform-origin: left;
+  transform: scaleX(0);
 }
+
+@keyframes lineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.lined-heading:hover::before {
+  height: 5px;
+  transition: height 0.3s ease;
+}
+
 @media (max-width: 500px) {
   .lined-heading {
     flex-direction: column;
