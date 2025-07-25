@@ -159,6 +159,15 @@ h2 {
   color: #0052ff;
 }
 
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+h5 {
+  color: #ee392c;
+}
+
+
 .btn {
   display: inline-block;
   padding: 12px 26px;
@@ -189,15 +198,6 @@ h2 {
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-
-h3 {
-  font-size: 24px;
-  font-weight: 500;
-}
-h5 {
-  color: #ee392c;
 }
 
 
@@ -507,7 +507,8 @@ footer a:hover {
 
 /* Lined Headings */
 .lined-heading {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
 }
@@ -518,6 +519,18 @@ footer a:hover {
   height: 3px;
   background-color: rgba(252, 71, 48, 1);
 }
+@media (max-width: 500px) {
+  .lined-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .lined-heading::before {
+    width: 50px;  /* optional: reduce width for visual balance */
+  }
+}
+
 
 @media (max-width: 767px) {
   .lined-heading {
