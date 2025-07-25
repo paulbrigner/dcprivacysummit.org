@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Video archive of the 2024 DC Privacy Summit sessions." >
+  <link rel="stylesheet" href="../fonts/fontawesome/css/all.min.css" />	
   <link href="../favicon.ico" rel="icon" type="image/x-icon"/>
   <title>2024 Summit Videos – DC Privacy Summit</title>
   <!-- Google Fonts -->
@@ -11,21 +12,61 @@
   <!-- Main stylesheet -->
   <link href="../css/styles.css" rel="stylesheet">
 </head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        navMenu.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
+	
 <body>
-  <!-- Header -->
-  <header>
-    <a href="/"><img src="../images/dc-privacy-summit.svg" alt="DC Privacy Summit logo" class="logo"></a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="../index.html#speakers">Speakers</a></li>
-        <li><a href="../index.html#sponsors">Sponsors</a></li>
-        <li><a href="../index.html#venue">Venue</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
-        <li><a href="./">2024 Videos</a></li>
-        <li><a href="https://lu.ma/dcprivacysummit2025" target="_blank" rel="noopener">Register</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <a href="/"><img src="../images/dc-privacy-summit.svg" alt="DC Privacy Summit logo" class="logo"></a>
+  <nav aria-label="Main"><header>
+  <a href="/">
+    <img src="../images/dc-privacy-summit.svg" alt="DC Privacy Summit logo" class="logo">
+  </a>
+
+  <!-- Hamburger icon -->
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav aria-label="Main" class="nav-menu">
+    <ul>
+      <li><a href="../index.htnl#speakers">Speakers</a></li>
+      <li><a href="../index.htnl#sponsors">Sponsors</a></li>
+      <li><a href="../index.htnl#venue">Venue</a></li>
+      <li><a href="../index.htnl#contact">Contact</a></li>
+      <li><a href="./index.html">2024 Videos</a></li>
+      <li><a href="https://lu.ma/dcprivacysummit2025" target="_blank" rel="noopener noreferrer">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <ul>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="./live-stream/index.html">2024 Videos</a></li>
+      <li><a href="https://lu.ma/dcprivacysummit2025" target="_blank" rel="noopener noreferrer" >Register</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <!-- Videos Section -->
@@ -40,39 +81,32 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="../index.html#speakers">Speakers</a></li>
-          <li><a href="../index.html#sponsors">Sponsors</a></li>
-          <li><a href="../index.html#venue">Venue</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
-          <li><a href="./">2024 Videos</a></li>
-          <li><a href="https://lu.ma/dcprivacysummit2025" target="_blank" rel="noopener">Register</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:contact@dcprivacysummit.org">contact@dcprivacysummit.org</a></li>
-          <li><a href="mailto:press@dcprivacysummit.org">press@dcprivacysummit.org</a></li>
-          <li><a href="https://www.capitalcampus.usc.edu/visiting-the-capital-campus/" target="_blank" rel="noopener">USC Capital Campus<br>1771 N Street NW<br>Washington, D.C. 20036</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Follow Us</h4>
-        <ul>
-          <li><a href="https://x.com/pgpforcrypto" target="_blank" rel="noopener">X (Twitter)</a></li>
-          <li><a href="https://www.linkedin.com/company/pgpforcrypto" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://www.youtube.com/@pgpforcrypto" target="_blank" rel="noopener">YouTube</a></li>
-        </ul>
-      </div>
+<footer id="contact">
+  <div class="container footer-grid">
+    <div>
+      <img loading="lazy" src="../images/dc-privacy-summit.svg" alt="DC Privacy Summit logo" style="max-width:220px">
+      <p style="margin-top:10px">Where Privacy, Innovation, and Policy Converge</p>
     </div>
-    <div class="container">
-      <p>&copy; 2025 DC Privacy Summit. All rights reserved.</p>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i><a href="../index#speakers">&nbsp; Speakers</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="../index#sponsors">&nbsp; Sponsors</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="../index#venue">&nbsp; Venue</a></li>
+        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="https://lu.ma/dcprivacysummit2025" target="_blank" rel="noopener noreferrer">&nbsp; Register</a></li>
+      </ul>
     </div>
-  </footer>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+		 
+        <li><a href="mailto:contact@dcprivacysummit.org"><i class="fas fa-envelope" aria-hidden="true"> &nbsp;</i>contact@dcprivacysummit.org</a></li>
+        <li><a href="mailto:press@dcprivacysummit.org"><i class="fas fa-envelope" aria-hidden="true"> &nbsp;</i>press@dcprivacysummit.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px">© <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
+</footer>
 </body>
 </html>
