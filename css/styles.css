@@ -62,10 +62,6 @@ nav a {
   color: var(--color-primary);
   transition: color 0.2s ease;
 }
-/* Smooth transition on all nav links */
-nav a {
-  transition: color 0.2s ease;
-}
 
 /* Change to red on hover */
 nav a:hover {
@@ -177,19 +173,14 @@ h5 {
   font-weight: 500;
   border-radius: 4px;
   text-decoration: none;
-  border-style: solid;
-  border-width: medium;
-  border-color: red;
   box-sizing: border-box;
-}
-.btn {
   border: 2px solid #E53E3E;
   color: #E53E3E;
   background: transparent;
-  transition: 
-    background-color 0.3s ease, 
-    color 0.3s ease, 
-    transform 0.2s ease, 
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
