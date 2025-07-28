@@ -505,3 +505,51 @@ footer a:hover {
 .fa, .fas, .far, .fal, .fab {
   color: #E53E3E;
 }
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #E53E3E;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background: #d43b33;
+}
+#responseMessage {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+#responseMessage.success { color: #15803d; }
+#responseMessage.error { color: #dc2626; }
