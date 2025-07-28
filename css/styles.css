@@ -62,14 +62,72 @@ nav a {
   color: var(--color-primary);
   transition: color 0.2s ease;
 }
-/* Smooth transition on all nav links */
-nav a {
-  transition: color 0.2s ease;
-}
 
 /* Change to red on hover */
 nav a:hover {
   color: rgba(252, 71, 48, 1);  /* or use #E53E3E */
+}
+
+/* Hamburger toggle button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Default nav styles */
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* MOBILE: Collapse nav, show hamburger */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: var(--color-dark);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 16px 20px;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
 }
 
 
@@ -97,6 +155,15 @@ h2 {
   color: #0052ff;
 }
 
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+h5 {
+  color: #ee392c;
+}
+
+
 .btn {
   display: inline-block;
   padding: 12px 26px;
@@ -106,19 +173,14 @@ h2 {
   font-weight: 500;
   border-radius: 4px;
   text-decoration: none;
-  border-style: solid;
-  border-width: medium;
-  border-color: red;
   box-sizing: border-box;
-}
-.btn {
   border: 2px solid #E53E3E;
   color: #E53E3E;
   background: transparent;
-  transition: 
-    background-color 0.3s ease, 
-    color 0.3s ease, 
-    transform 0.2s ease, 
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -130,102 +192,59 @@ h2 {
 }
 
 
-h3 {
-  font-size: 24px;
-  font-weight: 500;
+/* ---------- HERO REBUILD ---------- */
+.hero {
+  background: #FCF7EF;
+  /* Top / bottom padding scale smoothly with viewport height   */
+  padding-block: clamp(120px, 20vh, 260px) clamp(60px, 12vh, 180px);
+  color: var(--color-primary);
 }
-h5 {
+
+/* 3A – Layout container */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;   /* text | logo */
+  align-items: center;
+  gap: clamp(40px, 6vw, 96px);
+}
+
+/* 3B – Text */
+.hero h5 {
+  font-size: clamp(13px, 0.9vw, 15px);
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
   color: #ee392c;
 }
-
-
-
-/* Hero */
-.hero {
-  background-color: #FCF7EF;
-  background-image: url('../images/background.webp');
-  background-repeat: no-repeat;
-
-  /* CHANGE: Position image to the far right, vertically centered. */
-  /* Using a viewport unit (vw) provides a scalable margin from the edge. */
-  background-position: right 5vw center;
-  background-size: auto 80%;
-
-  position: relative;
-  color: var(--color-primary);
-  padding: 260px 0 180px;
-  text-align: left;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-}
-
-.hero .content {
-  position: relative;
-  max-width: 640px;
-  /* ADDITION: Add padding to prevent text from ever touching the image area. */
-  padding-right: 40px;
-}
-
-.hero h5 {
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
 .hero h1 {
-  font-size: 55px;
-  line-height: 1.15;
-  margin-bottom: 30px;
+  font-size: clamp(32px, 4vw, 60px);
+  line-height: 1.12;
+  margin-bottom: 32px;
   font-weight: 700;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .hero {
-    padding: 200px 0 120px;
+/* 3C – Logo block */
+.hero-media img {
+  width: clamp(180px, 22vw, 320px);
+  height: auto;
+  display: block;
+}
 
-    /* CHANGE: Keep the image to the right and reduce its size. */
-    /* Avoid 'cover', which caused overlap by filling the container. */
-    background-size: auto 65%;
-    background-position: right center;
+/* 3D – Mobile stacking */
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;  /* single column */
+    text-align: center;
   }
-  .hero h1 {
-    font-size: 42px;
+  .hero-media {
+  order: -1;               /* logo appears above the text */
+  margin: 0 auto;          /* centers horizontally */
+  margin-bottom: 28px;     /* spacing below the logo */
+  text-align: center;      /* ensures the image itself is centered */
   }
 }
 
-/* Mobile */
-@media (max-width: 767px) {
-  .hero {
-    padding: 200px 0 80px; /* Reduced top padding for better balance */
-    background-image: url('../images/background_mobile.webp');
-    background-repeat: no-repeat;
-    background-color: #FCF7EF;
 
-    /* --- KEY CHANGES FOR MOBILE --- */
-    
-    /* 1. CHANGE: Reduce image size to prevent horizontal overlap. */
-    /* Sizing by width (60%) is more predictable on narrow screens. */
-    background-size: 60% auto;
-
-    /* 2. CHANGE: Pin the image to the bottom right corner. */
-    /* This moves it cleanly below the text block, solving the overlap. */
-    background-position: right bottom;
-  }
-  .hero h1 {
-    font-size: 34px;
-  }
-  .hero .content {
-    /* Remove side padding on mobile if you want text to be full-width */
-    padding-right: 0;
-  }
-}
 /* --- NEW STYLES FOR THE GRID --- */
 
 /* This is the container for your feature blocks */
@@ -461,6 +480,9 @@ footer a:hover {
 #venue {
   background-color: rgba(252, 247, 239, 1);
 }
+#contact {
+  background-color: rgba(252, 247, 239, 1);
+}
 #about {
   padding-bottom: 20px;
 }
@@ -479,17 +501,44 @@ footer a:hover {
 
 /* Lined Headings */
 .lined-heading {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
 }
 .lined-heading::before {
   content: "";
-  flex-shrink: 0;
   width: 75px;
   height: 3px;
   background-color: rgba(252, 71, 48, 1);
+  animation: lineGrow 0.6s ease-out forwards;
+  transform-origin: left;
+  transform: scaleX(0);
 }
+
+@keyframes lineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.lined-heading:hover::before {
+  height: 5px;
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 500px) {
+  .lined-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .lined-heading::before {
+    width: 50px;  /* optional: reduce width for visual balance */
+  }
+}
+
 
 @media (max-width: 767px) {
   .lined-heading {
