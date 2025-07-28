@@ -456,6 +456,8 @@ footer a:hover {
   display: grid;
   gap: 40px;
 }
+
+
 @media (min-width: 768px) {
   .footer-grid {
     grid-template-columns: 2fr 1fr;
