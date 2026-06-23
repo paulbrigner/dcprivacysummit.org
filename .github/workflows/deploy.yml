@@ -2,7 +2,9 @@ name: Deploy to S3
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - staging
 
 jobs:
   deploy:
@@ -15,11 +17,23 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1  # Your region
+        aws-region: us-east-1
+
+    - name: Select deploy target
+      run: |
+        if [ "${GITHUB_REF_NAME}" = "main" ]; then
+          echo "S3_BUCKET=dcprivacysummit.org" >> "$GITHUB_ENV"
+          echo "CLOUDFRONT_DISTRIBUTION_ID=E2TGIAGVGSKJ2O" >> "$GITHUB_ENV"
+        elif [ "${GITHUB_REF_NAME}" = "staging" ]; then
+          echo "S3_BUCKET=staging.dcprivacysummit.org" >> "$GITHUB_ENV"
+          echo "CLOUDFRONT_DISTRIBUTION_ID=E3IN32OXEJELM7" >> "$GITHUB_ENV"
+        else
+          echo "Unsupported branch: ${GITHUB_REF_NAME}" >&2
+          exit 1
+        fi
 
     - name: Sync to S3
-      run: aws s3 sync . s3://dcprivacysummit.org --delete --exclude ".git/*"
+      run: aws s3 sync . "s3://${S3_BUCKET}" --delete --exclude ".git/*"
 
-  
     - name: Invalidate CloudFront
-      run: aws cloudfront create-invalidation --distribution-id E2TGIAGVGSKJ2O --paths "/*"
+      run: aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" --paths "/*"
