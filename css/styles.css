@@ -2138,6 +2138,13 @@ footer a:hover {
   text-transform: uppercase;
 }
 
+.cpd-ticket-price span b {
+  display: block;
+  margin-top: 5px;
+  color: var(--cpd-ink);
+  font-size: 12px;
+}
+
 .cpd-ticket-includes {
   display: grid;
   gap: 11px;
