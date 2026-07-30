@@ -9,7 +9,6 @@
 <meta property="og:image" content="https://dcprivacysummit.org/images/logo_300x300.png">
 <meta property="og:url" content="https://dcprivacysummit.org/">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css" />
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -17,12 +16,13 @@
 <link rel="icon" type="image/x-icon" href="./favicon.ico">
 <link href="./css/styles.css" rel="stylesheet">
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-  
-<title>DC Privacy Summit – A focused conversation about the future of privacy, identity, and security online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"></noscript>
 
-</head>
-  
+<title>DC Privacy Summit – Privacy, Identity, and Security Policy</title>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -37,18 +37,18 @@
     }
   });
 </script>
-
+</head>
 
 <body>
 <!-- Header -->
 <header>
   <a href="/" class="site-brand" aria-label="DC Privacy Summit home">
     <span class="brand-lock" aria-hidden="true">
-      <img src="images/DCPrivacySummit_white@3x.png" alt="">
+      <img src="images/optimized/homepage/dc-privacy-lock-160.png" srcset="images/optimized/homepage/dc-privacy-lock-160.png 160w, images/optimized/homepage/dc-privacy-lock-240.png 240w" sizes="71px" width="160" height="117" alt="">
     </span>
-    <img src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit" class="logo">
+    <img src="images/DCPrivacySummit_wordmark_white.svg" width="220" height="63" alt="DC Privacy Summit" class="logo">
   </a>
-  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+  <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
@@ -83,9 +83,15 @@
       </div>
 
       <h1>A curated discussion about the future of privacy, identity, and security online</h1>
-      <p class="hero-subtext">A pop-up think tank that brings togther cryptographers, developers, policy makers & regulators, law enforcment officials, and civil liberties advocates.</p>
+      <p class="hero-subtext">A pop-up think tank that brings together cryptographers, developers, policymakers and regulators, law enforcement officials, and civil liberties advocates.</p>
       <div class="video-wrapper hero-video" id="video">
-        <iframe src="https://www.youtube.com/embed/2gVNEQSKD7w" title="2025 DC Privacy Summit Highlights" allowfullscreen></iframe>
+        <button class="video-facade" type="button" data-youtube-id="2gVNEQSKD7w" aria-label="Play 2025 DC Privacy Summit highlights">
+          <picture>
+            <source srcset="images/optimized/homepage/2025-highlights-poster-480.avif 480w, images/optimized/homepage/2025-highlights-poster.avif 960w" sizes="(max-width: 760px) calc(100vw - 40px), 700px" type="image/avif">
+            <img src="images/optimized/homepage/2025-highlights-poster.jpg" srcset="images/optimized/homepage/2025-highlights-poster-480.jpg 480w, images/optimized/homepage/2025-highlights-poster.jpg 960w" sizes="(max-width: 760px) calc(100vw - 40px), 700px" width="960" height="540" alt="" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="video-facade__play" aria-hidden="true"></span>
+        </button>
       </div>
     <div class="cta-group hero-video-cta">
         <a href="https://luma.com/p60o9q3i" class="btn btn--accent">Register here</a>
@@ -128,23 +134,53 @@
     <h2 class="lined-heading">2026 Speakers</h2>
     <div class="speaker-grid">
       <article class="speaker-card fade-init">
-        <img src="images/2026/Cindy Cohn 1 new high res.jpg" alt="Cindy Cohn" loading="lazy">
+        <picture>
+          <source
+            srcset="images/optimized/homepage/speakers/cindy-cohn-400.avif 400w, images/optimized/homepage/speakers/cindy-cohn-800.avif 800w, images/optimized/homepage/speakers/cindy-cohn-1200.avif 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            type="image/avif">
+          <img
+            src="images/optimized/homepage/speakers/cindy-cohn-800.jpg"
+            srcset="images/optimized/homepage/speakers/cindy-cohn-400.jpg 400w, images/optimized/homepage/speakers/cindy-cohn-800.jpg 800w, images/optimized/homepage/speakers/cindy-cohn-1200.jpg 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            width="800" height="800" alt="Cindy Cohn" loading="lazy" decoding="async">
+        </picture>
         <div class="speaker-card__copy">
           <strong>Cindy Cohn</strong>
           <p>Cindy Cohn is one of the leading American attorneys focusing on the intersection of civil liberties and digital technologies. She is the author of Privacy’s Defender, My 30-year Fight Against Digital Surveillance.  She spent 26 years at the Electronic Frontier Foundation, serving as its Executive Director from 2015 until mid-2026, and as its Legal Director as well as General Counsel from 2000-2015. Ms. Cohn first became involved with EFF in 1993, when EFF asked her to serve as the outside lead attorney in Bernstein v. Dept. of Justice, the successful First Amendment challenge to the U.S. export restrictions on cryptography that established the legal principle that publishing computer code is protected expression under the First Amendment. </p>
         </div>
       </article>
       <article class="speaker-card fade-init">
-        <img src="images/2026/wd.jpg" alt="2026 DC Privacy Summit speaker; name to be announced" loading="lazy">
+        <picture>
+          <source
+            srcset="images/optimized/homepage/speakers/wei-dai-400.avif 400w, images/optimized/homepage/speakers/wei-dai-800.avif 800w, images/optimized/homepage/speakers/wei-dai-1200.avif 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            type="image/avif">
+          <img
+            src="images/optimized/homepage/speakers/wei-dai-800.jpg"
+            srcset="images/optimized/homepage/speakers/wei-dai-400.jpg 400w, images/optimized/homepage/speakers/wei-dai-800.jpg 800w, images/optimized/homepage/speakers/wei-dai-1200.jpg 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            width="800" height="800" alt="Wei Dai" loading="lazy" decoding="async">
+        </picture>
         <div class="speaker-card__copy">
           <strong>Wei Dai</strong>
           <p>Wei is a research partner at 1kx, where he focuses on research and investment in financial and security infrastructure within AI, blockchain, and frontier technologies.
 
-Before becoming a venture investor, he published more than a dozen academic papers on security, cryptography, & blockchains, designed, developed, and deployed blockchain & privacy protocols, and advised numerous startups building financial and security infrastructure. He holds a PhD in Computer Science (with specialization in cryptography) from the University of California, San Diego.</p>
+Before becoming a venture investor, he published more than a dozen academic papers on security, cryptography, &amp; blockchains, designed, developed, and deployed blockchain &amp; privacy protocols, and advised numerous startups building financial and security infrastructure. He holds a PhD in Computer Science (with specialization in cryptography) from the University of California, San Diego.</p>
         </div>
       </article>
       <article class="speaker-card fade-init">
-        <img src="images/2026/Headshot  - Lascar.jpg" alt="Julie Lascar" loading="lazy">
+        <picture>
+          <source
+            srcset="images/optimized/homepage/speakers/julie-lascar-400.avif 400w, images/optimized/homepage/speakers/julie-lascar-800.avif 800w, images/optimized/homepage/speakers/julie-lascar-1200.avif 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            type="image/avif">
+          <img
+            src="images/optimized/homepage/speakers/julie-lascar-800.jpg"
+            srcset="images/optimized/homepage/speakers/julie-lascar-400.jpg 400w, images/optimized/homepage/speakers/julie-lascar-800.jpg 800w, images/optimized/homepage/speakers/julie-lascar-1200.jpg 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            width="800" height="800" alt="Julie Lascar" loading="lazy" decoding="async">
+        </picture>
         <div class="speaker-card__copy">
           <strong>Julie Lascar</strong>
           <p>Julie Lascar leads global policy at Digital Asset, the
@@ -161,21 +197,51 @@ advance global implementation of the FATF standards.</p>
         </div>
       </article>
       <article class="speaker-card fade-init">
-        <img src="images/2025/speakers/neha.png" alt="Neha Narula" loading="lazy">
+        <picture>
+          <source
+            srcset="images/optimized/homepage/speakers/neha-narula-400.avif 400w, images/optimized/homepage/speakers/neha-narula-800.avif 800w, images/optimized/homepage/speakers/neha-narula-1200.avif 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            type="image/avif">
+          <img
+            src="images/optimized/homepage/speakers/neha-narula-800.jpg"
+            srcset="images/optimized/homepage/speakers/neha-narula-400.jpg 400w, images/optimized/homepage/speakers/neha-narula-800.jpg 800w, images/optimized/homepage/speakers/neha-narula-1200.jpg 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            width="800" height="800" alt="Neha Narula" loading="lazy" decoding="async">
+        </picture>
         <div class="speaker-card__copy">
           <strong>Neha Narula</strong>
           <p>Neha Narula is the Director of the Digital Currency Initiative at the MIT Media Lab, where her research interests are in cryptocurrencies and distributed systems. She is also on the Board of Directors for Block and the Innovation Advisory Council for the Federal Reserve Bank of New York. Neha has given a TED talk on the future of money and was named to WIRED's list of 25 leaders shaping the next 25 years of technology. She received her PhD in computer science from MIT in 2015, where she published work on fast, scalable databases and before that was a senior software engineer at Google.</p>
         </div>
       </article>
       <article class="speaker-card fade-init">
-        <img class="speaker-card__image--justin" src="images/2026/Justin Slaughter.JPG" alt="Justin Slaughter" loading="lazy">
+        <picture>
+          <source
+            srcset="images/optimized/homepage/speakers/justin-slaughter-400.avif 400w, images/optimized/homepage/speakers/justin-slaughter-800.avif 800w, images/optimized/homepage/speakers/justin-slaughter-1200.avif 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            type="image/avif">
+          <img
+            src="images/optimized/homepage/speakers/justin-slaughter-800.jpg"
+            srcset="images/optimized/homepage/speakers/justin-slaughter-400.jpg 400w, images/optimized/homepage/speakers/justin-slaughter-800.jpg 800w, images/optimized/homepage/speakers/justin-slaughter-1200.jpg 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            width="800" height="800" alt="Justin Slaughter" loading="lazy" decoding="async">
+        </picture>
         <div class="speaker-card__copy">
           <strong>Justin Slaughter</strong>
           <p>Justin Slaughter is the VP of Regulatory Affairs at Paradigm. Prior to joining Paradigm, Justin was Director of the Office of Legislative and Intergovernmental Affairs and Senior Advisor to Acting Securities and Exchange Commission Chair Allison Herren Lee. Justin has also served as Chief Policy Advisor and Special Counsel to former Commissioner Sharon Bowen at the Commodity Futures Trading Commission, and as General Counsel to Senator Edward J. Markey. He has also served as a consultant in private practice focusing on crypto, fintech and frontier technology startups.</p>
         </div>
       </article>
       <article class="speaker-card fade-init">
-        <img src="images/2025/speakers/Peter.webp" alt="Peter Van Valkenburgh" loading="lazy">
+        <picture>
+          <source
+            srcset="images/optimized/homepage/speakers/peter-van-valkenburgh-400.avif 400w, images/optimized/homepage/speakers/peter-van-valkenburgh-800.avif 800w, images/optimized/homepage/speakers/peter-van-valkenburgh-1200.avif 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            type="image/avif">
+          <img
+            src="images/optimized/homepage/speakers/peter-van-valkenburgh-800.jpg"
+            srcset="images/optimized/homepage/speakers/peter-van-valkenburgh-400.jpg 400w, images/optimized/homepage/speakers/peter-van-valkenburgh-800.jpg 800w, images/optimized/homepage/speakers/peter-van-valkenburgh-1200.jpg 1200w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 899px) calc(50vw - 36px), 353px"
+            width="800" height="800" alt="Peter Van Valkenburgh" loading="lazy" decoding="async">
+        </picture>
         <div class="speaker-card__copy">
           <strong>Peter Van Valkenburgh</strong>
           <p>Peter is Executive Director at Coin Center, the leading
@@ -214,7 +280,7 @@ privacy, surveillance, and digital copyright law.</p>
         <img src="images/2026/brown-rudnick-logo.png" alt="Brown Rudnick" loading="lazy">
       </a>
       <a class="sponsor-card" href="https://Cypherpunk.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Cypherpunk">
-        <img src="images/2026/CP Logo.png" alt="Cypherpunk" loading="lazy">
+        <img src="images/optimized/homepage/cypherpunk-logo-1200.png" width="1200" height="268" alt="Cypherpunk" loading="lazy" decoding="async">
       </a>
     </div>
     <div class="sponsor-cta">
@@ -229,13 +295,23 @@ privacy, surveillance, and digital copyright law.</p>
     <h2 class="lined-heading">Venue</h2>
     <p>National Union Building<br>918 F Street NW, Washington, D.C.</p>
 
-    <div class="venue-gallery" aria-label="National Union Building photos">
+    <div class="venue-gallery" role="group" aria-label="National Union Building photos">
       <figure>
-        <img src="images/venue/national-union-building-exterior.jpg" alt="Exterior of the historic National Union Building" loading="lazy">
+        <picture>
+          <source
+            srcset="images/optimized/homepage/national-union-building-800.avif 800w, images/optimized/homepage/national-union-building-1400.avif 1400w"
+            sizes="(max-width: 1170px) calc(100vw - 40px), 1130px"
+            type="image/avif">
+          <img
+            src="images/optimized/homepage/national-union-building-1400.jpg"
+            srcset="images/optimized/homepage/national-union-building-800.jpg 800w, images/optimized/homepage/national-union-building-1400.jpg 1400w"
+            sizes="(max-width: 1170px) calc(100vw - 40px), 1130px"
+            width="1400" height="788" alt="Exterior of the historic National Union Building" loading="lazy" decoding="async">
+        </picture>
         <figcaption>The National Union Building brings the Summit to a restored downtown landmark with a distinctive Romanesque presence and flexible event spaces for focused conversation.</figcaption>
       </figure>
       <figure>
-        <img src="images/cpd/national-union-building-sixth-floor-dinner.webp" alt="Dinner setup inside the National Union Building" loading="lazy">
+        <img src="images/cpd/national-union-building-sixth-floor-dinner.webp" width="1500" height="1125" alt="Dinner setup inside the National Union Building" loading="lazy" decoding="async">
         <figcaption>The venue offers an intimate setting for panels, networking, and working sessions.</figcaption>
       </figure>
     </div>
@@ -246,7 +322,7 @@ privacy, surveillance, and digital copyright law.</p>
     </div>
 
     <div class="venue-map">
-      <iframe title="National Union Building map" src="https://www.google.com/maps?q=National%20Union%20Building%20918%20F%20Street%20NW%20Washington%20DC&amp;output=embed" width="100%" height="360" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="National Union Building map" src="https://www.google.com/maps?q=National%20Union%20Building%20918%20F%20Street%20NW%20Washington%20DC&amp;output=embed" width="600" height="360" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
@@ -255,7 +331,7 @@ privacy, surveillance, and digital copyright law.</p>
 <section id="contact" class="section">
   <div class="container">
     <h2 class="lined-heading">Contact&nbsp;Us</h2>
-    <p style="text-align:center;margin-bottom:30px">Have questions or want to sponsor? Send us a message.</p>
+    <p class="contact-intro">Have questions or want to sponsor? Send us a message.</p>
     <div class="contact-form">
       <form id="contactForm" action="https://formsubmit.co/hello@projectglitch.xyz" method="POST">
         <label for="name">Full&nbsp;Name</label>
@@ -287,34 +363,44 @@ privacy, surveillance, and digital copyright law.</p>
     <div>
       <div class="footer-brand-mark">
         <span class="brand-lock" aria-hidden="true">
-          <img loading="lazy" src="images/DCPrivacySummit_white@3x.png" alt="">
+          <img loading="lazy" src="images/optimized/homepage/dc-privacy-lock-160.png" srcset="images/optimized/homepage/dc-privacy-lock-160.png 160w, images/optimized/homepage/dc-privacy-lock-240.png 240w" sizes="71px" width="160" height="117" alt="">
         </span>
-        <img loading="lazy" src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit">
+        <img loading="lazy" src="images/DCPrivacySummit_wordmark_white.svg" width="220" height="63" alt="DC Privacy Summit">
       </div>
-      <p style="margin-top:10px">Where Privacy,
+      <p class="footer-tagline">Where Privacy,
 Security, and
 Digital Identity
 Converge</p>
     </div>
     <div>
-      <h4>Quick Links</h4>
+      <h3>Quick Links</h3>
       <ul>
-        <li>
-                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
-      <a href="#speakers">&nbsp;Speakers</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="cpd.html">&nbsp; Policy Dinner</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="#sponsors">&nbsp; Sponsors</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="#venue">&nbsp; Venue</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="#contact">&nbsp; Contact</a></li>
+        <li><span class="footer-chevron" aria-hidden="true">›</span><a href="#speakers">Speakers</a></li>
+        <li><span class="footer-chevron" aria-hidden="true">›</span><a href="cpd.html">Policy Dinner</a></li>
+        <li><span class="footer-chevron" aria-hidden="true">›</span><a href="#sponsors">Sponsors</a></li>
+        <li><span class="footer-chevron" aria-hidden="true">›</span><a href="#venue">Venue</a></li>
+        <li><span class="footer-chevron" aria-hidden="true">›</span><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>
-  <div style="text-align:center;margin-top:40px">© <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
+  <div class="footer-copyright">© <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
 </footer>
 
 <script>
 // update year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('[data-youtube-id]').forEach((facade) => {
+  facade.addEventListener('click', () => {
+    const videoId = facade.dataset.youtubeId;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+    iframe.title = '2025 DC Privacy Summit Highlights';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    facade.replaceWith(iframe);
+  }, { once: true });
+});
 </script>
 
 

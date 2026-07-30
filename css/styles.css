@@ -408,12 +408,66 @@ a:focus-visible {
   background: #000;
 }
 
-.video-wrapper iframe {
+.video-wrapper iframe,
+.video-facade {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.video-facade {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  background: #000;
+}
+
+.video-facade picture,
+.video-facade img {
+  width: 100%;
+  height: 100%;
+}
+
+.video-facade img {
+  object-fit: cover;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.video-facade:hover img,
+.video-facade:focus-visible img {
+  transform: scale(1.02);
+  opacity: 0.86;
+}
+
+.video-facade:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px;
+}
+
+.video-facade__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76px;
+  height: 54px;
+  border-radius: 14px;
+  transform: translate(-50%, -50%);
+  background: rgba(238, 57, 44, 0.96);
+  box-shadow: 0 12px 28px rgba(3, 7, 18, 0.35);
+}
+
+.video-facade__play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 17px solid #fff;
+  transform: translate(-40%, -50%);
 }
 
 .video-wrapper--playlist {
@@ -710,6 +764,10 @@ a:focus-visible {
   border-radius: var(--border-radius-lg);
   background: #fff;
   box-shadow: var(--shadow-card);
+}
+
+.speaker-card picture {
+  display: block;
 }
 
 .speaker-card img {
@@ -1060,6 +1118,11 @@ a:focus-visible {
 
 .venue-map {
   margin-top: clamp(40px, 6vw, 64px);
+}
+
+.venue-map iframe {
+  width: 100%;
+  border: 0;
 }
 
 /* Subpage Hero */
@@ -1706,7 +1769,14 @@ footer {
 footer p {
   color: rgba(255, 255, 255, 0.82);
 }
-footer h4 {
+.footer-tagline {
+  margin-top: 10px;
+}
+.footer-copyright {
+  margin-top: 40px;
+  text-align: center;
+}
+footer h3 {
   color: #ffffff;
   margin-bottom: 10px;
   font-size: 16px;
@@ -1715,7 +1785,21 @@ footer ul {
   list-style: none;
   padding: 0;
 }
+footer li {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  min-height: 28px;
+}
+.footer-chevron {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 18px;
+  line-height: 1;
+}
 footer a {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 14px;
@@ -1833,6 +1917,11 @@ footer a:hover {
 }
 
 /* Contact Form */
+.contact-intro {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .contact-form {
   max-width: 600px;
   margin: 0 auto;

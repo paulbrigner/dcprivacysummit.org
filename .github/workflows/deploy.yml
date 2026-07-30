@@ -32,8 +32,18 @@ jobs:
           exit 1
         fi
 
-    - name: Sync to S3
-      run: aws s3 sync . "s3://${S3_BUCKET}" --delete --exclude ".git/*"
+    - name: Sync static assets to S3
+      run: |
+        aws s3 sync . "s3://${S3_BUCKET}" \
+          --delete \
+          --exclude ".git/*" \
+          --cache-control "no-cache"
+
+    - name: Apply immutable caching to versioned optimized assets
+      run: |
+        aws s3 cp images/optimized "s3://${S3_BUCKET}/images/optimized" \
+          --recursive \
+          --cache-control "public,max-age=31536000,immutable"
 
     - name: Invalidate CloudFront
       run: aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" --paths "/*"
