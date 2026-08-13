@@ -37,6 +37,7 @@ jobs:
         aws s3 sync . "s3://${S3_BUCKET}" \
           --delete \
           --exclude ".git/*" \
+          --exclude "aws/*" \
           --cache-control "no-cache"
 
     - name: Apply immutable caching to versioned optimized assets

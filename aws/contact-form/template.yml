@@ -1,0 +1,167 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Low-cost guarded contact form backend for DC Privacy Summit
+
+Parameters:
+  HmacSecret:
+    Type: String
+    NoEcho: true
+    MinLength: 32
+  DestinationEmails:
+    Type: CommaDelimitedList
+    Default: paul@paulbrigner.com,orcuttmh@gmail.com
+
+Resources:
+  ContactGuardTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: dcps-contact-guard
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+      SSESpecification:
+        SSEEnabled: true
+      TimeToLiveSpecification:
+        AttributeName: expiresAt
+        Enabled: true
+      OnDemandThroughput:
+        MaxReadRequestUnits: 5
+        MaxWriteRequestUnits: 5
+
+  ContactFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: dcps-contact-form-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: ContactFormDataAndEmail
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:PutItem
+                  - dynamodb:UpdateItem
+                  - dynamodb:DeleteItem
+                Resource: !GetAtt ContactGuardTable.Arn
+              - Effect: Allow
+                Action: ses:SendEmail
+                Resource:
+                  - !Sub arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/dcprivacysummit.org
+                  - !Sub arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/admin@dcprivacysummit.org
+
+  ContactFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: contact_dcps_v2
+      Description: Guarded DC Privacy Summit contact form email relay
+      Runtime: nodejs22.x
+      Architectures:
+        - arm64
+      Handler: index.handler
+      Role: !GetAtt ContactFunctionRole.Arn
+      MemorySize: 128
+      Timeout: 5
+      ReservedConcurrentExecutions: 2
+      Code:
+        ZipFile: |
+          exports.handler = async () => ({ statusCode: 503, body: '{"message":"Deployment incomplete."}' });
+      Environment:
+        Variables:
+          ALLOWED_ORIGINS: https://dcprivacysummit.org,https://www.dcprivacysummit.org,https://staging.dcprivacysummit.org
+          DESTINATION_EMAILS: !Join [",", !Ref DestinationEmails]
+          GLOBAL_DAILY_LIMIT: "25"
+          GUARD_TABLE: !Ref ContactGuardTable
+          HMAC_SECRET: !Ref HmacSecret
+          MAX_BODY_BYTES: "8192"
+          MAX_TOKEN_AGE_MS: "1800000"
+          MIN_TOKEN_AGE_MS: "3000"
+          PER_IP_HOURLY_LIMIT: "3"
+          SES_REGION: !Ref AWS::Region
+          SOURCE_EMAIL: admin@dcprivacysummit.org
+
+  ContactLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${ContactFunction}
+      RetentionInDays: 30
+
+  ContactFunctionUrl:
+    Type: AWS::Lambda::Url
+    Properties:
+      TargetFunctionArn: !GetAtt ContactFunction.Arn
+      AuthType: NONE
+      InvokeMode: BUFFERED
+      Cors:
+        AllowCredentials: false
+        AllowHeaders:
+          - content-type
+        AllowMethods:
+          - GET
+          - POST
+        AllowOrigins:
+          - https://dcprivacysummit.org
+          - https://www.dcprivacysummit.org
+          - https://staging.dcprivacysummit.org
+        MaxAge: 300
+
+  ContactFunctionUrlPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunctionUrl
+      FunctionName: !Ref ContactFunction
+      FunctionUrlAuthType: NONE
+      Principal: "*"
+
+  ContactFunctionInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref ContactFunction
+      InvokedViaFunctionUrl: true
+      Principal: "*"
+
+  ContactRejectionMetric:
+    Type: AWS::Logs::MetricFilter
+    Properties:
+      LogGroupName: !Ref ContactLogGroup
+      FilterPattern: '{ $.rejected = true }'
+      MetricTransformations:
+        - MetricNamespace: DCPrivacySummit/ContactForm
+          MetricName: RejectedSubmissions
+          MetricValue: "1"
+          DefaultValue: 0
+
+  ContactRejectionAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: dcps-contact-form-rejections
+      AlarmDescription: Contact form rejected at least five submissions in one hour
+      Namespace: DCPrivacySummit/ContactForm
+      MetricName: RejectedSubmissions
+      Statistic: Sum
+      Period: 3600
+      EvaluationPeriods: 1
+      DatapointsToAlarm: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+
+Outputs:
+  ContactFunctionName:
+    Value: !Ref ContactFunction
+  ContactFunctionUrl:
+    Value: !GetAtt ContactFunctionUrl.FunctionUrl
+  ContactGuardTableName:
+    Value: !Ref ContactGuardTable
