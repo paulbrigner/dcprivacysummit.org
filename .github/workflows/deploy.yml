@@ -150,6 +150,7 @@ jobs:
           fi
 
           if [ "$current_main_sha" != "$STAGING_SHA" ]; then
+            git fetch --no-tags origin main staging
             git push origin "$STAGING_SHA:refs/heads/main"
           fi
 
