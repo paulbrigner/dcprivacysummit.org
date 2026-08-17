@@ -122,13 +122,13 @@ jobs:
       group: dcprivacysummit-production
       cancel-in-progress: false
     permissions:
-      contents: write
+      contents: read
       id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.verify-promotion.outputs.staging_sha }}
-          persist-credentials: false
+          ssh-key: ${{ secrets.MAIN_PROMOTION_DEPLOY_KEY }}
 
       - name: Recheck and fast-forward main
         env:
@@ -150,10 +150,7 @@ jobs:
           fi
 
           if [ "$current_main_sha" != "$STAGING_SHA" ]; then
-            gh api --method PATCH \
-              "repos/$GITHUB_REPOSITORY/git/refs/heads/main" \
-              -f sha="$STAGING_SHA" \
-              -F force=false >/dev/null
+            git push origin "$STAGING_SHA:refs/heads/main"
           fi
 
       - name: Configure AWS credentials
