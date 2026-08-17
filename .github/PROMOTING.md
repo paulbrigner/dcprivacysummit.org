@@ -26,3 +26,7 @@ during the promotion.
 If the run turns red, do not push directly to `main` and do not force the
 workflow to continue. Open the failed step to retain its error message and ask
 the repository administrator to investigate.
+
+A green run means `main` now points to the tested staging commit, the production
+CloudFront invalidation completed, and the live site passed the workflow's
+commit-marker and homepage hash checks.
