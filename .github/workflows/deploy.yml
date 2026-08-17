@@ -127,6 +127,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: ${{ needs.verify-promotion.outputs.staging_sha }}
           ssh-key: ${{ secrets.MAIN_PROMOTION_DEPLOY_KEY }}
 
