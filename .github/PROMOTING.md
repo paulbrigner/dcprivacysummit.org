@@ -1,6 +1,11 @@
 # Promote staging to production
 
 Use this procedure only after the staging site looks correct.
+You do not need Git, a terminal, or AWS access.
+
+Bookmark the
+[Deploy site workflow](https://github.com/paulbrigner/dcprivacysummit.org/actions/workflows/deploy.yml)
+for future promotions.
 
 1. Review [staging.dcprivacysummit.org](https://staging.dcprivacysummit.org/).
 2. Confirm the latest **Deploy staging** run is green on the
