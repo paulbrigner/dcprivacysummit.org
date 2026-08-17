@@ -1,50 +1,184 @@
-name: Deploy to S3
+name: Deploy site
 
 on:
   push:
     branches:
-      - main
       - staging
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: I verified the staging site and want to promote it to production
+        required: true
+        type: boolean
+
+permissions:
+  contents: read
 
 jobs:
-  deploy:
+  deploy-staging:
+    name: Deploy staging
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: ${{ vars.SITE_URL }}
+    concurrency:
+      group: dcprivacysummit-staging
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-1
+          role-session-name: dcps-staging-${{ github.run_id }}
 
-    - name: Select deploy target
-      run: |
-        if [ "${GITHUB_REF_NAME}" = "main" ]; then
-          echo "S3_BUCKET=dcprivacysummit.org" >> "$GITHUB_ENV"
-          echo "CLOUDFRONT_DISTRIBUTION_ID=E2TGIAGVGSKJ2O" >> "$GITHUB_ENV"
-        elif [ "${GITHUB_REF_NAME}" = "staging" ]; then
-          echo "S3_BUCKET=staging.dcprivacysummit.org" >> "$GITHUB_ENV"
-          echo "CLOUDFRONT_DISTRIBUTION_ID=E3IN32OXEJELM7" >> "$GITHUB_ENV"
-        else
-          echo "Unsupported branch: ${GITHUB_REF_NAME}" >&2
-          exit 1
-        fi
+      - name: Deploy and verify staging
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+          DEPLOY_SHA: ${{ github.sha }}
+          S3_BUCKET: ${{ vars.S3_BUCKET }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: .github/scripts/deploy-site.sh
 
-    - name: Sync static assets to S3
-      run: |
-        aws s3 sync . "s3://${S3_BUCKET}" \
-          --delete \
-          --exclude ".git/*" \
-          --exclude "aws/*" \
-          --cache-control "no-cache"
+  verify-promotion:
+    name: Verify promotion
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      main_sha: ${{ steps.candidate.outputs.main_sha }}
+      staging_sha: ${{ steps.candidate.outputs.staging_sha }}
+    steps:
+      - name: Require confirmation and the default branch
+        env:
+          CONFIRMED: ${{ inputs.confirm }}
+        run: |
+          if [ "$GITHUB_REF_NAME" != "main" ]; then
+            echo "Run this workflow from the main branch." >&2
+            exit 1
+          fi
 
-    - name: Apply immutable caching to versioned optimized assets
-      run: |
-        aws s3 cp images/optimized "s3://${S3_BUCKET}/images/optimized" \
-          --recursive \
-          --cache-control "public,max-age=31536000,immutable"
+          if [ "$CONFIRMED" != "true" ]; then
+            echo "Promotion was not confirmed." >&2
+            exit 1
+          fi
 
-    - name: Invalidate CloudFront
-      run: aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" --paths "/*"
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Resolve and validate the candidate
+        id: candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin main staging
+          main_sha=$(git rev-parse origin/main)
+          staging_sha=$(git rev-parse origin/staging)
+
+          if ! git merge-base --is-ancestor "$main_sha" "$staging_sha"; then
+            echo "main is not an ancestor of staging; refusing a non-fast-forward promotion." >&2
+            exit 1
+          fi
+
+          staging_runs=$(gh api \
+            "repos/$GITHUB_REPOSITORY/actions/workflows/deploy.yml/runs?branch=staging&event=push&status=success&per_page=100")
+
+          if ! jq -e --arg sha "$staging_sha" \
+            '.workflow_runs | any(.head_sha == $sha and .conclusion == "success")' \
+            <<< "$staging_runs" >/dev/null; then
+            echo "No successful staging deployment exists for $staging_sha." >&2
+            exit 1
+          fi
+
+          echo "main_sha=$main_sha" >> "$GITHUB_OUTPUT"
+          echo "staging_sha=$staging_sha" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Promotion candidate"
+            echo ""
+            echo "- Current production: \`$main_sha\`"
+            echo "- Tested staging: \`$staging_sha\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  promote-production:
+    name: Promote and deploy production
+    needs: verify-promotion
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ vars.SITE_URL }}
+    concurrency:
+      group: dcprivacysummit-production
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.verify-promotion.outputs.staging_sha }}
+          persist-credentials: false
+
+      - name: Recheck and fast-forward main
+        env:
+          EXPECTED_MAIN_SHA: ${{ needs.verify-promotion.outputs.main_sha }}
+          GH_TOKEN: ${{ github.token }}
+          STAGING_SHA: ${{ needs.verify-promotion.outputs.staging_sha }}
+        run: |
+          current_main_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq '.object.sha')
+          current_staging_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/staging" --jq '.object.sha')
+
+          if [ "$current_main_sha" != "$EXPECTED_MAIN_SHA" ]; then
+            echo "main changed after validation; start a new promotion." >&2
+            exit 1
+          fi
+
+          if [ "$current_staging_sha" != "$STAGING_SHA" ]; then
+            echo "staging changed after validation; start a new promotion." >&2
+            exit 1
+          fi
+
+          if [ "$current_main_sha" != "$STAGING_SHA" ]; then
+            gh api --method PATCH \
+              "repos/$GITHUB_REPOSITORY/git/refs/heads/main" \
+              -f sha="$STAGING_SHA" \
+              -F force=false >/dev/null
+          fi
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-1
+          role-session-name: dcps-production-${{ github.run_id }}
+
+      - name: Deploy and verify production
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+          DEPLOY_SHA: ${{ needs.verify-promotion.outputs.staging_sha }}
+          S3_BUCKET: ${{ vars.S3_BUCKET }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: .github/scripts/deploy-site.sh
+
+      - name: Record promotion
+        env:
+          DEPLOY_SHA: ${{ needs.verify-promotion.outputs.staging_sha }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          {
+            echo "### Production promotion succeeded"
+            echo ""
+            echo "- Commit: \`$DEPLOY_SHA\`"
+            echo "- Site: $SITE_URL"
+          } >> "$GITHUB_STEP_SUMMARY"
