@@ -963,20 +963,21 @@ a:focus-visible {
 }
 
 /* Sponsor Grid */
+.sponsor-tier {
+  margin-top: clamp(34px, 5vw, 56px);
+}
+
+.sponsor-tier h3 {
+  margin: 0 0 18px;
+  color: var(--color-primary);
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+}
+
 .sponsor-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: clamp(18px, 3vw, 30px);
-  margin-top: clamp(32px, 5vw, 52px);
-}
-@media (min-width: 600px) {
-  .sponsor-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (min-width: 1000px) {
-  .sponsor-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+  margin-top: 0;
 }
 
 .sponsor-card {
@@ -984,12 +985,21 @@ a:focus-visible {
   min-height: 180px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.92);
-  padding: clamp(28px, 4vw, 44px);
+  padding: clamp(10px, 1.5vw, 18px);
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(16, 34, 72, 0.08);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sponsor-tier--premiere .sponsor-grid {
+  max-width: 560px;
+}
+
+.sponsor-tier--premiere .sponsor-card {
+  min-height: 220px;
 }
 
 .sponsor-card:hover,
@@ -1000,9 +1010,10 @@ a:focus-visible {
 
 .sponsor-grid .sponsor-card img {
   width: 100%;
-  max-width: 240px;
-  height: 92px;
+  max-width: 280px;
+  height: 120px;
   object-fit: contain;
+  transform: scale(1.5);
   filter: none;
   opacity: 1;
   padding: 0;
