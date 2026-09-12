@@ -693,6 +693,26 @@ strong {
 .text-link span {
   font-size: 19px;
 }
+.government-attendance {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.government-attendance h3 {
+  margin-bottom: 12px;
+  color: var(--paper);
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.government-attendance p {
+  color: #c2cfca;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.government-attendance p + p {
+  margin-top: 12px;
+}
 .checkout-shell {
   background: white;
   color: var(--ink);
