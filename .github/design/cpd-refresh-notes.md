@@ -15,7 +15,7 @@ Board app's current released package: `pgpz-sites/output/pgpz-brand-package-symb
 - Exact supplied `logos/svg/master/pgpz-primary-on-dark.svg` and `graphics/svg/pgpz-circle-motif-on-dark.svg` copied into `images/cpd/brand/`.
 - Inter Regular, Medium, Semibold, and Extrabold copied with the supplied OFL license into `fonts/cpd/`. Fonts are self-hosted.
 - Evergreen #0D1F20 / paper #F6FAF2 dominate; ink #102827, slate #475569, teal #2F6F68; operating gold #F5A800 is used for accents and button backgrounds.
-- Supplied logo composition/colors remain unmodified, with 256px display width. Official roundel is never detached or repeated. Composite logo links to https://z.cash/ as specified by the package; adjacent PGPZ text links to https://pgpz.org/.
+- Supplied logo composition/colors remain unmodified, with 256px display width. Official roundel is never detached or repeated. Header and footer logo links, along with adjacent PGPZ text links, lead to the organization's homepage at https://pgpz.org/.
 - Footer preserves the package's independence statement.
 - Current trademark reference checked: https://zfnd.org/zcash-trademark-policy/.
 
