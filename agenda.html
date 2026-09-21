@@ -1,421 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Explore the discussion panels and keynote sessions planned for the 2025 DC Privacy Summit.">
-  <meta property="og:title" content="Agenda – DC Privacy Summit">
-  <meta property="og:description" content="Preview the panels and keynote sessions planned for the 2025 DC Privacy Summit.">
-  <meta property="og:image" content="https://dcprivacysummit.org/images/logo_300x300.png">
+  <meta name="description" content="Explore the provisional program for the 2026 DC Privacy Summit.">
+  <meta property="og:title" content="Provisional Agenda – DC Privacy Summit">
+  <meta property="og:description" content="Preview the talks, panels, and speakers planned for the 2026 DC Privacy Summit.">
+  <meta property="og:image" content="https://dcprivacysummit.org/images/DCPrivacySummit_logo.png">
   <meta property="og:url" content="https://dcprivacysummit.org/agenda.html">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
   <link rel="manifest" href="./site.webmanifest">
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
-  <title>Agenda – DC Privacy Summit</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
   <link href="./css/styles.css" rel="stylesheet">
-</head>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener('click', () => {
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!expanded));
-        navMenu.classList.toggle('active');
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;family=Poppins:wght@500&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"></noscript>
+  <title>Provisional Agenda – DC Privacy Summit</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if (toggle && menu) toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('active');
       });
-    }
-  });
-</script>
-
+    });
+  </script>
+</head>
 <body>
-<!-- Header -->
 <header>
-  <a href="/"><img src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" class="logo"></a>
-  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+  <a href="/" class="site-brand" aria-label="DC Privacy Summit home">
+    <span class="brand-lock" aria-hidden="true"><img src="images/optimized/homepage/dc-privacy-lock-160.png" srcset="images/optimized/homepage/dc-privacy-lock-160.png 160w, images/optimized/homepage/dc-privacy-lock-240.png 240w" sizes="71px" width="160" height="117" alt=""></span>
+    <img src="images/DCPrivacySummit_wordmark_white.svg" width="220" height="63" alt="DC Privacy Summit" class="logo">
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   <nav aria-label="Main" class="nav-menu">
     <ul>
       <li><a href="/#speakers">Speakers</a></li>
+      <li><a href="/agenda.html" aria-current="page">Agenda</a></li>
       <li><a href="/cpd.html">Policy Dinner</a></li>
-      <li><a href="/index.html#sponsors">Sponsors</a></li>
-      <li><a href="/index.html#venue">Venue</a></li>
-      <li><a href="/index.html#contact">Contact</a></li>
-      <li class="has-submenu">
-        <a href="/videos/2025/index.html">Videos</a>
-        <ul class="submenu">
-          <li><a href="/videos/2025/index.html">2025</a></li>
-          <li><a href="/videos/2024/index.html">2024</a></li>
-        </ul>
-      </li>
+      <li><a href="/#sponsors">Sponsors</a></li>
+      <li><a href="/#venue">Venue</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li class="has-submenu"><a href="/videos/2025/index.html">Videos</a><ul class="submenu"><li><a href="/videos/2025/index.html">2025</a></li></ul></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section class="section page-hero">
+  <section class="section page-hero agenda-page-hero">
     <div class="container">
-      <p class="page-eyebrow">Program Preview</p>
-      <h1>Agenda</h1>
-      <p>You can explore the full program for the 2025 DC Privacy Summit below.</p>
+      <p class="page-eyebrow">October 15, 2026 · Washington, D.C.</p>
+      <h1>Provisional Agenda</h1>
+      <p>A preview of the talks and conversations planned for the 2026 DC Privacy Summit. The program is subject to change.</p>
     </div>
   </section>
 
-  <section class="section" id="agenda">
-    <div class="container">
-      <div class="agenda-schedule">
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">9:30 &ndash; 9:35</p>
-          <h3>Opening Remarks</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#paul-brigner">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/PaulBrigner.webp" alt="Paul Brigner">
-                <figcaption><strong>Paul Brigner</strong><span>Founder of PGP* for Crypto</span></figcaption>
-              </figure>
-            </a>
-          </div>
-        </article>
+  <section class="section" id="agenda" aria-labelledby="agenda-heading">
+    <div class="container agenda-page-container">
+      <h2 class="lined-heading" id="agenda-heading">Program</h2>
+      <aside class="agenda-morning-note" aria-labelledby="morning-program">
+        <p class="agenda-kicker">Morning program</p>
+        <h3 id="morning-program">Private roundtables</h3>
+        <p>Private roundtables on digital identity and crypto incident response. Email <a href="mailto:hello@projectglitch.xya">hello@projectglitch.xya</a> for more information.</p>
+      </aside>
 
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">9:35 &ndash; 9:55</p>
-          <h3>You Underestimate Modern Cryptography</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#arnaud-schenk">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/arnaud.png" alt="Arnaud Schenk">
-                <figcaption><strong>Arnaud Schenk</strong><span>Executive Director, Aztec Foundation</span></figcaption>
-              </figure>
-            </a>
-          </div>
+      <div class="agenda-schedule agenda-schedule--untimed">
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Opening Remarks</p>
+          <ul class="agenda-participants"><li><p class="agenda-moderator"><span>Project Glitch Founding Editor</span> <strong>Mike Orcutt</strong></p>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">10:00 &ndash; 10:25</p>
-          <h3>The Coming Privacy Forest Fire&mdash;and How to Fight It</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#matthew-green">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/mattgreen.png" alt="Matthew Green">
-                <figcaption><strong>Matthew Green</strong><span>Professor of Computer Science, Johns Hopkins University</span></figcaption>
-              </figure>
-            </a>
-          </div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Keynote</p><h3>Privacy, crypto, and the First Amendment</h3>
+          <ul class="agenda-participants"><li><strong>Cindy Cohn</strong><span>Former Executive Director, Electronic Frontier Foundation</span></li></ul>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">10:25 &ndash; 10:35</p>
-          <h3>Keynote with Neha Nerula</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#neha-narula">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/neha.png" alt="Neha Narula">
-                <figcaption><strong>Neha Narula</strong><span>Director, Digital Currency Initiative at MIT</span></figcaption>
-              </figure>
-            </a>
-          </div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Keynote</p><h3>What it means for privacy and identity when an AI agent is you</h3>
+          <ul class="agenda-participants"><li><strong>Matt Green</strong><span>Johns Hopkins University</span></li></ul>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">10:35 &ndash; 11:00</p>
-          <h3>Fireside Chat: A Regulator&rsquo;s View on Privacy</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#neha-narula">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/neha.png" alt="Neha Narula">
-                <figcaption><strong>Neha Narula</strong><span>Director, Digital Currency Initiative at MIT</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#hester-peirce">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/hpeirce.png" alt="Hester Peirce">
-                <figcaption><strong>Hester Peirce</strong><span>Commissioner, US Securities and Exchange Commission</span></figcaption>
-              </figure>
-            </a>
-          </div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Panel</p><h3>What we talk about when we talk about privacy</h3>
+          <ul class="agenda-participants"><li><strong>Julie Lascar</strong><span>Canton</span></li><li><strong>Katherine Kirkpatrick Box</strong><span>Chainlink</span></li></ul>
+          <p class="agenda-moderator"><span>Moderated by</span> <strong>Mike Orcutt</strong></p>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">11:00 &ndash; 11:10</p>
-          <h3>Coffee Break</h3>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Fireside conversation</p><h3>Unpacking the age verification debate</h3>
+          <ul class="agenda-participants"><li><strong>Alexzandra Kekesi</strong><span>Aylo</span></li></ul>
+          <p class="agenda-moderator"><span>Moderated by</span> <strong>Lucy Harley-McKeown</strong></p>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">11:10 &ndash; 11:50</p>
-          <h3>How to Fight the Lazarus Group</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#samczsun">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/Samczsun.png" alt="Samczsun">
-                <figcaption><strong>Samczsun</strong><span>Founder, Security Alliance (SEAL)</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#michael-mosier">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/Michael.webp" alt="Michael Mosier">
-                <figcaption><strong>Michael Mosier</strong><span>Co-Founder, Arktouros pllc</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#casey-g">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/casey.png" alt="Casey G">
-                <figcaption><strong>Casey G</strong><span>zeroShadow</span></figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="session-moderator">
-            <a class="session-speaker-link" href="speaker-bios.html#mike-orcutt">
-              <figure class="session-speaker session-speaker--moderator">
-                <img loading="lazy" src="images/2025/speakers/Mike.webp" alt="Mike Orcutt">
-                <figcaption>
-                  <span class="session-moderator__role">Moderator</span>
-                  <strong>Mike Orcutt</strong>
-                  <span>Editor at Project Glitch</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Talk</p><h3>Real-world limits of techno-solutionism</h3>
+          <ul class="agenda-participants"><li><strong>Ying Tong</strong><span>Independent cryptographer</span></li></ul>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">11:50 &ndash; 12:10</p>
-          <h3>Fireside Chat: Why I&rsquo;m Suing the DOJ</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#michael-lewellen">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/lewellen.png" alt="Michael Lewellen">
-                <figcaption><strong>Michael Lewellen</strong><span>Head of Solutions Engineering, Turnkey</span></figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="session-moderator">
-            <a class="session-speaker-link" href="speaker-bios.html#mike-orcutt">
-              <figure class="session-speaker session-speaker--moderator">
-                <img loading="lazy" src="images/2025/speakers/Mike.webp" alt="Mike Orcutt">
-                <figcaption>
-                  <span class="session-moderator__role">Moderator</span>
-                  <strong>Mike Orcutt</strong>
-                  <span>Editor at Project Glitch</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
+        <div class="agenda-break" role="separator"><span>Break</span></div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Fireside conversation</p><h3>Defending humanity against AI authoritarianism</h3>
+          <ul class="agenda-participants"><li><strong>Erik Voorhees</strong><span>Venice</span></li></ul>
+          <p class="agenda-moderator"><span>Moderated by</span> <strong>Michael Reilly</strong></p>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">12:10 &ndash; 12:30</p>
-          <h3>Hazy with a Chance of Privacy: A Weather Report for Crypto Policy</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#peter-van-valkenburgh">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/Peter.webp" alt="Peter Van Valkenburgh">
-                <figcaption><strong>Peter Van Valkenburgh</strong><span>Executive Director, Coin Center</span></figcaption>
-              </figure>
-            </a>
-          </div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Panel</p><h3>The narrow path to non-dystopian digital ID</h3>
+          <ul class="agenda-participants"><li><strong>Austin Campbell</strong><span>Zero Knowledge Group</span></li><li><strong>Ian Miers</strong><span>University of Maryland</span></li></ul>
+          <p class="agenda-moderator"><span>Moderated by</span> <strong>Peter Van Valkenburgh</strong></p>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">12:30 &ndash; 1:30</p>
-          <h3>Lunch</h3>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Panel</p><h3>Why should we trust zero-knowledge proofs?</h3>
+          <ul class="agenda-participants"><li><strong>Justin Thaler</strong><span>a16z</span></li><li><strong>Alexander Hicks</strong><span>Ethereum Foundation · Appearing remotely</span></li><li><strong>Quang Dao</strong><span>LayerZero and Carnegie Mellon University · Appearing remotely</span></li></ul>
+          <p class="agenda-moderator"><span>Moderated by</span> <strong>Mike Orcutt</strong></p>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">1:30 &ndash; 1:45</p>
-          <h3>The Privacy Trilemma</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#wei-dai">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/wd.png" alt="Wei Dai">
-                <figcaption><strong>Wei Dai</strong><span>Research Partner, 1kx</span></figcaption>
-              </figure>
-            </a>
-          </div>
+        <div class="agenda-break" role="separator"><span>Break</span></div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Fireside conversation</p><h3>TBD</h3>
+          <ul class="agenda-participants"><li><strong>Connie LaSalle</strong><span>National Institute of Standards and Technology</span></li></ul>
+          <p class="agenda-moderator"><span>Moderated by</span> <strong>Mike Orcutt</strong></p>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">1:45 &ndash; 2:20</p>
-          <h3>What ZK Can&mdash;and Can&rsquo;t&mdash;Do for You</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#justin-thaler">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/Justin.webp" alt="Justin Thaler">
-                <figcaption><strong>Justin Thaler</strong><span>Research Partner, a16z</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#abhi-shelat">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/abhishelat.png" alt="Abhi Shelat">
-                <figcaption><strong>Abhi Shelat</strong><span>Professor of Computer Science, Northeastern University</span></figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="session-moderator">
-            <a class="session-speaker-link" href="speaker-bios.html#mike-orcutt">
-              <figure class="session-speaker session-speaker--moderator">
-                <img loading="lazy" src="images/2025/speakers/Mike.webp" alt="Mike Orcutt">
-                <figcaption>
-                  <span class="session-moderator__role">Moderator</span>
-                  <strong>Mike Orcutt</strong>
-                  <span>Editor at Project Glitch</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Keynote</p><h3>TBD</h3>
+          <ul class="agenda-participants"><li><strong>Yaya Fanusie</strong><span>Aleo Network Foundation</span></li></ul>
         </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">2:20 &ndash; 3:00</p>
-          <h3>How to Avoid a Dystopian Digital ID System</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#ying-tong">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/yingtong.png" alt="Ying Tong">
-                <figcaption><strong>Ying Tong</strong><span>Independent Applied Cryptographer</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#aisling-connolly">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/AislingConnolly.png" alt="Aisling Connolly">
-                <figcaption><strong>Aisling Connolly</strong><span>Chief Strategy Officer, TACEO</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#amal-ibraymi">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/Amal.png" alt="Amal Ibraymi">
-                <figcaption><strong>Amal Ibraymi</strong><span>Legal Counsel, Aztec</span></figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="session-moderator">
-            <a class="session-speaker-link" href="speaker-bios.html#lucy-harley-mckeown">
-              <figure class="session-speaker session-speaker--moderator">
-                <img loading="lazy" src="images/2025/speakers/lucy.png" alt="Lucy Harley-McKeown">
-                <figcaption>
-                  <span class="session-moderator__role">Moderator</span>
-                  <strong>Lucy Harley-McKeown</strong>
-                  <span>Editor at Project Glitch</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
-        </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">3:00 &ndash; 3:10</p>
-          <h3>Coffee Break</h3>
-        </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">3:10 &ndash; 3:50</p>
-          <h3>What the GENIUS Act Could Mean for Privacy and AML</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#lizandro-pieper">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/laz.png" alt="Lizandro (Laz) Pieper">
-                <figcaption><strong>Lizandro (Laz) Pieper</strong><span>Research Director, DeFi Education Fund</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#ian-miers">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/ian.png" alt="Ian Miers">
-                <figcaption><strong>Ian Miers</strong><span>Professor of Computer Science, University of Maryland</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#ross-schulman">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/ross.png" alt="Ross Schulman">
-                <figcaption><strong>Ross Schulman</strong><span>Senior Policy &amp; Software Engineer, SpruceID</span></figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="session-moderator">
-            <a class="session-speaker-link" href="speaker-bios.html#veronica-irwin">
-              <figure class="session-speaker session-speaker--moderator">
-                <img loading="lazy" src="images/2025/speakers/veronica.png" alt="Veronica Irwin">
-                <figcaption>
-                  <span class="session-moderator__role">Moderator</span>
-                  <strong>Veronica Irwin</strong>
-                  <span>Independent Journalist</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
-        </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">3:50 &ndash; 4:25</p>
-          <h3>The Year Is 2030: What Does On-Chain Privacy and Compliance Look Like?</h3>
-          <div class="session-speakers">
-            <a class="session-speaker-link" href="speaker-bios.html#remi-gai">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/remi.png" alt="Remi Gai">
-                <figcaption><strong>Remi Gai</strong><span>Founder, Inco</span></figcaption>
-              </figure>
-            </a>
-            <a class="session-speaker-link" href="speaker-bios.html#nikhil-raghuveera">
-              <figure class="session-speaker">
-                <img loading="lazy" src="images/2025/speakers/Nikhil.webp" alt="Nikhil Raghuveera">
-                <figcaption><strong>Nikhil Raghuveera</strong><span>CEO, Predicate</span></figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="session-moderator">
-            <a class="session-speaker-link" href="speaker-bios.html#mike-orcutt">
-              <figure class="session-speaker session-speaker--moderator">
-                <img loading="lazy" src="images/2025/speakers/Mike.webp" alt="Mike Orcutt">
-                <figcaption>
-                  <span class="session-moderator__role">Moderator</span>
-                  <strong>Mike Orcutt</strong>
-                  <span>Editor at Project Glitch</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
-        </article>
-
-        <article class="agenda-session program-card">
-          <p class="agenda-session__time">4:25</p>
-          <h3>Closing Remarks</h3>
+        <article class="agenda-session agenda-session--untimed program-card">
+          <p class="agenda-kicker">Keynote</p><h3>TBD</h3>
+          <ul class="agenda-participants"><li><strong>Justin Slaughter</strong><span>Paradigm</span></li></ul>
         </article>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Footer -->
 <footer id="footer">
   <div class="container footer-grid">
-    <div>
-      <img loading="lazy" src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" style="max-width:220px">
-      <p style="margin-top:10px">Where Privacy, Security, and Digital Identity Converge</p>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="index.html#speakers">&nbsp; Speakers</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="agenda.html">&nbsp; Agenda</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="cpd.html">&nbsp; Policy Dinner</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="index.html#sponsors">&nbsp; Sponsors</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="index.html#venue">&nbsp; Venue</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="index.html#contact">&nbsp; Contact</a></li>
-      </ul>
-    </div>
+    <div><div class="footer-brand-mark"><span class="brand-lock" aria-hidden="true"><img loading="lazy" src="images/optimized/homepage/dc-privacy-lock-160.png" srcset="images/optimized/homepage/dc-privacy-lock-160.png 160w, images/optimized/homepage/dc-privacy-lock-240.png 240w" sizes="71px" width="160" height="117" alt=""></span><img loading="lazy" src="images/DCPrivacySummit_wordmark_white.svg" width="220" height="63" alt="DC Privacy Summit"></div><p class="footer-tagline">Where Privacy,
+Security, and
+Digital Identity
+Converge</p></div>
+    <div><h3>Quick Links</h3><ul>
+      <li><span class="footer-chevron" aria-hidden="true">›</span><a href="/#speakers">Speakers</a></li>
+      <li><span class="footer-chevron" aria-hidden="true">›</span><a href="/agenda.html">Agenda</a></li>
+      <li><span class="footer-chevron" aria-hidden="true">›</span><a href="/cpd.html">Policy Dinner</a></li>
+      <li><span class="footer-chevron" aria-hidden="true">›</span><a href="/#sponsors">Sponsors</a></li>
+      <li><span class="footer-chevron" aria-hidden="true">›</span><a href="/#venue">Venue</a></li>
+      <li><span class="footer-chevron" aria-hidden="true">›</span><a href="/#contact">Contact</a></li>
+    </ul></div>
   </div>
-  <div style="text-align:center;margin-top:40px">© <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
+  <div class="footer-copyright">© <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
 </footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
