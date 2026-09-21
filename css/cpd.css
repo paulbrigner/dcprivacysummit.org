@@ -353,8 +353,8 @@ h1 {
   object-fit: cover;
   object-position: center 24%;
 }
-.portrait-moreno img {
-  object-position: center 19%;
+.portrait-zinda img {
+  object-position: center 20%;
 }
 .portrait-label {
   position: absolute;
@@ -486,6 +486,21 @@ h1 {
   font-weight: 500;
   color: var(--ink);
   line-height: 1.5;
+}
+.purpose-copy .career-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin-top: -4px;
+  margin-bottom: 22px;
+}
+.career-path span {
+  white-space: nowrap;
 }
 strong {
   font-weight: 600;
@@ -885,8 +900,8 @@ strong {
   .portrait img {
     object-position: center 20%;
   }
-  .portrait-moreno img {
-    object-position: center 15%;
+  .portrait-zinda img {
+    object-position: center top;
   }
   .speaker h3 {
     font-size: 23px;
