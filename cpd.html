@@ -1,213 +1,563 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Tickets are $200 and payable exclusively in Zcash (ZEC) for the Cypherpunk Policy Dinner in Washington, DC on October 14, 2026.">
-  <meta property="og:title" content="Cypherpunk Policy Dinner — October 14, 2026">
-  <meta property="og:description" content="A ticketed evening of financial privacy and cypherpunk policy conversation during DC Privacy Summit week. Tickets are $200 per person, payable exclusively in Zcash (ZEC).">
-  <meta property="og:image" content="https://dcprivacysummit.org/images/cpd/cpd-social-card.png">
-  <meta property="og:url" content="https://dcprivacysummit.org/cpd.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-  <link rel="manifest" href="./site.webmanifest">
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&amp;family=Poppins:wght@500;600&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-  <link href="./css/styles.css" rel="stylesheet">
-  <title>Cypherpunk Policy Dinner — DC Privacy Summit</title>
-</head>
-
-<body class="cpd-page">
-<header>
-  <a href="/"><img src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" class="logo"></a>
-  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-  <nav aria-label="Main" class="nav-menu">
-    <ul>
-      <li><a href="/#speakers">Speakers</a></li>
-      <li><a href="/cpd.html" aria-current="page">Policy Dinner</a></li>
-      <li><a href="/index.html#sponsors">Sponsors</a></li>
-      <li><a href="/index.html#venue">Venue</a></li>
-      <li><a href="/index.html#contact">Contact</a></li>
-      <li class="has-submenu">
-        <a href="/videos/2025/index.html">Videos</a>
-        <ul class="submenu">
-          <li><a href="/videos/2025/index.html">2025</a></li>
-          <li><a href="/videos/2024/index.html">2024</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <section class="cpd-hero">
-    <div class="container cpd-hero__grid">
-      <div class="cpd-hero__copy">
-        <a class="cpd-association" href="/">An associated event of the DC Privacy Summit <span aria-hidden="true">&rarr;</span></a>
-        <p class="cpd-kicker">Wednesday, October 14, 2026 <span aria-hidden="true">&middot;</span> Washington, D.C.</p>
-        <h1>Cypherpunk<br>Policy Dinner</h1>
-        <p class="cpd-hero__intro">A high-signal evening connecting cypherpunks with policymakers, technologists, and privacy advocates to shape the future of financial privacy.</p>
-
-        <div class="cpd-hero__facts" aria-label="Event details">
-          <div>
-            <span>5:00&ndash;6:30 PM</span>
-            <strong>Happy hour reception</strong>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="PGPZ presents the Cypherpunk Policy Dinner. Josh Swihart meets DC cypherpunk Landon Zinda, with Julie Stitzel moderating. October 14, 2026, Washington, DC. Privacy, policy, and a seat at the table. $200, ZEC only."
+    />
+    <meta
+      property="og:title"
+      content="Cypherpunks, meet Washington. | PGPZ Cypherpunk Policy Dinner"
+    />
+    <meta
+      property="og:description"
+      content="From building private money to shaping policy: keynotes from Josh Swihart and Landon Zinda, followed by a fireside chat with Julie Stitzel. Led by PGPZ, with Project Glitch programming. October 14, 2026. $200, ZEC only."
+    />
+    <meta
+      property="og:image"
+      content="https://dcprivacysummit.org/images/cpd/cpd-pgpz-social-card.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="PGPZ presents the Cypherpunk Policy Dinner, October 14, 2026, featuring Josh Swihart, Landon Zinda — the DC cypherpunk — and Julie Stitzel."
+    />
+    <meta property="og:url" content="https://dcprivacysummit.org/cpd.html" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0D1F20" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link
+      rel="preload"
+      href="./fonts/cpd/Inter-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/cpd/Inter-Extrabold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link href="./css/cpd.css" rel="stylesheet" />
+    <title>
+      Cypherpunk Policy Dinner — Presented by PGPZ | October 14, 2026
+    </title>
+  </head>
+  <body class="cpd-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand-link"
+          href="https://pgpz.org/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Pretty Good Policy for Zcash — visit PGPZ (opens in a new tab)"
+          ><img
+            src="images/cpd/brand/pgpz-primary-on-dark.svg"
+            width="1656"
+            height="750"
+            alt="Pretty Good Policy for Zcash (PGPZ)"
+        /></a>
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <span></span><span></span>
+        </button>
+        <nav id="main-nav" aria-label="Main navigation">
+          <a href="#speakers">The speakers</a>
+          <a href="#program">The evening</a>
+          <a href="/">DC Privacy Summit <span aria-hidden="true">↗</span></a>
+          <a class="button button-small" href="#tickets"
+            >Take your seat <span aria-hidden="true">↗</span></a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="event-title">
+        <div class="container">
+          <div class="hero-topline">
+            <p>
+              <span class="signal-dot" aria-hidden="true"></span> PGPZ presents
+            </p>
+            <a href="/"
+              >An associated event of the DC Privacy Summit
+              <span aria-hidden="true">↗</span></a
+            >
           </div>
-          <div>
-            <span>6:30 PM</span>
-            <strong>Dinner follows</strong>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">October 14, 2026 / Washington, D.C.</p>
+              <h1 id="event-title">
+                Cypherpunk<br />Policy Dinner<span class="period">.</span>
+              </h1>
+              <p class="hero-statement">Cypherpunks, meet Washington.</p>
+              <p class="hero-intro">
+                The people building private money. The people writing the rules.
+                <strong>One table.</strong> PGPZ brings them together for an
+                evening on financial privacy, open finance, and the freedom to
+                transact.
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="#tickets"
+                  >Take your seat — $200 <span aria-hidden="true">↗</span></a
+                ><span class="payment-note"
+                  >Pay in Zcash.<br />Put privacy into practice.</span
+                >
+              </div>
+              <p class="programming-credit">
+                Led by
+                <a href="https://pgpz.org/" target="_blank" rel="noopener"
+                  >Pretty Good Policy for Zcash (PGPZ)</a
+                >.<br />Programming in collaboration with
+                <strong>Project Glitch</strong>.
+              </p>
+            </div>
+            <section
+              class="lineup"
+              id="speakers"
+              aria-labelledby="lineup-title"
+            >
+              <div class="lineup-heading">
+                <h2 id="lineup-title">The keynote speakers</h2>
+                <span aria-hidden="true">01 / 02</span>
+              </div>
+              <div class="keynote-grid">
+                <article class="speaker">
+                  <div class="portrait">
+                    <img
+                      src="images/cpd/josh-swihart.jpg"
+                      width="600"
+                      height="600"
+                      alt="Josh Swihart"
+                      fetchpriority="high"
+                    /><span class="portrait-label">Keynote</span>
+                  </div>
+                  <h3>Josh Swihart</h3>
+                  <p>CEO, ZODL</p>
+                </article>
+                <article class="speaker">
+                  <div class="portrait portrait-zinda">
+                    <img
+                      src="images/cpd/landon-zinda.jpg"
+                      width="2367"
+                      height="2367"
+                      alt="Landon Zinda"
+                      fetchpriority="high"
+                    /><span class="portrait-label">Keynote</span>
+                  </div>
+                  <h3>Landon Zinda</h3>
+                  <p>
+                    Senior Advisor, SEC Crypto Task Force<br />Counsel to the
+                    Chairman
+                  </p>
+                </article>
+              </div>
+              <div class="fireside-connector">
+                <span aria-hidden="true">↓</span> Followed by a fireside chat
+                with Josh and Landon
+              </div>
+              <article class="moderator">
+                <img
+                  src="images/cpd/julie-stitzel.jpg"
+                  width="600"
+                  height="600"
+                  alt="Julie Stitzel"
+                />
+                <div>
+                  <p class="eyebrow">Fireside moderator</p>
+                  <h3>Julie Stitzel</h3>
+                  <p>Chief Policy Officer, DCG</p>
+                </div>
+              </article>
+            </section>
           </div>
-          <div>
-            <span>National Union Building</span>
-            <strong>Sixth floor</strong>
+          <div class="event-facts" aria-label="Event details">
+            <div>
+              <span class="fact-label">The date</span
+              ><strong>Wednesday, October 14, 2026</strong>
+            </div>
+            <div>
+              <span class="fact-label">The time</span
+              ><strong>Reception 5:00 PM · Dinner 6:30 PM</strong
+              ><span class="fact-detail">Eastern Time</span>
+            </div>
+            <div>
+              <span class="fact-label">The place</span
+              ><strong>National Union Building · Sixth floor</strong
+              ><span class="fact-detail">918 F Street NW, Washington, DC</span>
+            </div>
           </div>
         </div>
-
-        <div class="cta-group">
-          <a class="btn cpd-btn" href="#tickets">Buy with ZEC &mdash; $200</a>
-          <a class="cpd-text-link" href="https://www.nationalunionbuildingdc.com/event-spaces#6thfloor" target="_blank" rel="noopener">Explore the venue <span aria-hidden="true">&nearr;</span></a>
-        </div>
-        <p class="cpd-support-note"><strong>Anchor sponsor</strong> <a href="https://forum.zcashcommunity.com/t/cypherpunk-policy-dinner-cpd-zcg-anchor-sponsorship/55592" target="_blank" rel="noopener">The Zcash Community, through a grant from Zcash Community Grants.</a></p>
-      </div>
-
-      <figure class="cpd-hero__media">
-        <img src="images/cpd/national-union-building-sixth-floor-dinner.webp" width="1500" height="1125" alt="Guests seated for dinner in the sixth-floor event space at the National Union Building">
-        <figcaption>National Union Building, Sixth Floor <span>918 F Street NW</span></figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="section cpd-purpose" id="about-cpd">
-    <div class="container cpd-purpose__grid">
-      <div>
-        <p class="cpd-overline">Why CPD</p>
-        <h2>Financial privacy needs a stronger voice in Washington.</h2>
-      </div>
-      <div class="cpd-purpose__copy">
-        <p>Policymakers often encounter crypto through enforcement, illicit finance, speculation, or generalized industry lobbying. They hear far less about why financial privacy is a public good and why privacy-preserving cryptography matters.</p>
-        <p>A curated dinner brings policy leaders, technologists, journalists, advocates, and community members into a different kind of exchange&mdash;one where financial privacy is normal, privacy-preserving technology is essential, and cypherpunk values remain relevant to public policy.</p>
-        <p class="cpd-credit-line">Organized by <strong>Project Glitch</strong> with administrative support from <strong>PGP* for Zcash (PGPZ)</strong>.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section cpd-program" id="program">
-    <div class="container cpd-program__layout">
-      <div class="cpd-program__intro">
-        <p class="cpd-overline">The evening</p>
-        <h2>Reception first.<br>Dinner and dialogue follow.</h2>
-      </div>
-      <ol class="cpd-timeline">
-        <li>
-          <time datetime="2026-10-14T17:00:00-04:00">5:00&ndash;6:30 PM</time>
-          <div>
-            <h3>Happy hour reception</h3>
-            <p>Drinks, introductions, and informal conversation among cypherpunks, policymakers, technologists, and privacy advocates.</p>
+      </section>
+      <section
+        class="purpose section"
+        id="about-cpd"
+        aria-labelledby="purpose-title"
+      >
+        <div class="container">
+          <div class="purpose-grid">
+            <div>
+              <p class="eyebrow">The juxtaposition is the point</p>
+              <h2 id="purpose-title">
+                Cypherpunk values.<br />A seat at the<br />policy table.
+              </h2>
+            </div>
+            <div class="purpose-copy">
+              <p class="lead">Meet the DC cypherpunk.</p>
+              <p
+                class="career-path"
+                aria-label="Landon Zinda’s career: Capitol Hill, Coin Center, SEC"
+              >
+                <span>Capitol Hill</span><span aria-hidden="true">→</span>
+                <span>Coin Center</span><span aria-hidden="true">→</span>
+                <span>SEC</span>
+              </p>
+              <p>
+                <strong>Landon Zinda</strong> knows Washington from the inside
+                and crypto from first principles. From advising lawmakers on the
+                Hill to serving as Coin Center’s Policy Director and now on the
+                SEC’s Crypto Task Force, his career brings cypherpunk ideas into
+                the rooms where policy takes shape.
+              </p>
+              <p>
+                At Coin Center, he
+                <a
+                  href="https://coincenter.org/how-congress-should-and-should-not-approach-defi/"
+                  target="_blank"
+                  rel="noopener"
+                  >defended the freedom to publish code</a
+                >, the right to privacy, and the principles behind
+                permissionless DeFi. Now he joins <strong>Josh Swihart</strong>,
+                CEO of ZODL, for an evening that puts the builders of private
+                money and the people shaping policy at the same table.
+              </p>
+              <p>
+                PGPZ convenes. Project Glitch brings its programming and
+                cypherpunk perspective. The ambition: make financial privacy a
+                starting point for policy, rather than an afterthought.
+              </p>
+              <p>
+                <strong
+                  >If you build it, defend it, or want policy to protect it, you
+                  belong at this table.</strong
+                >
+              </p>
+            </div>
           </div>
-        </li>
-        <li>
-          <time datetime="2026-10-14T18:30:00-04:00">6:30 PM</time>
-          <div>
-            <h3>Dinner and dialogue</h3>
-            <p>A seated meal with opening remarks, anchor-sponsor recognition, and a curated cypherpunk policy conversation.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section cpd-tickets" id="tickets" aria-labelledby="tickets-heading">
-    <div class="container cpd-tickets__layout">
-      <div class="cpd-tickets__intro">
-        <p class="cpd-overline">Tickets</p>
-        <h2 id="tickets-heading">Reserve your seat.</h2>
-        <div class="cpd-ticket-price" aria-label="Ticket price: 200 dollars per person, payable only in Zcash">
-          <strong>$200</strong>
-          <span>per person <b>ZEC only</b></span>
+          <p class="principles">
+            <span>Financial privacy</span><span>Self-custody</span
+            ><span>Permissionless DeFi</span><span>Freedom to build</span>
+          </p>
+          <p class="sponsor-credit">
+            <span class="eyebrow">Anchor sponsor</span> The Zcash Community,
+            through a grant from
+            <a
+              href="https://forum.zcashcommunity.com/t/cypherpunk-policy-dinner-cpd-zcg-anchor-sponsorship/55592"
+              target="_blank"
+              rel="noopener"
+              >Zcash Community Grants <span aria-hidden="true">↗</span></a
+            >
+          </p>
         </div>
-        <p>Tickets include the happy hour reception, seated dinner, and evening program. Payment is exclusively in Zcash (ZEC); ZecTix shows the exact ZEC amount and completes registration through Luma.</p>
-        <a class="cpd-text-link cpd-text-link--dark" href="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6" target="_blank" rel="noopener">Open checkout in a new window <span aria-hidden="true">&nearr;</span></a>
-      </div>
-
-      <div class="cpd-checkout-shell">
-        <div class="cpd-checkout-shell__heading">
-          <div>
-            <p class="cpd-overline">Secure checkout</p>
-            <h3>Cypherpunk Policy Dinner</h3>
+      </section>
+      <section
+        class="program section"
+        id="program"
+        aria-labelledby="program-title"
+      >
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">The evening / October 14</p>
+              <h2 id="program-title">
+                Good company.<br />Consequential conversation.
+              </h2>
+            </div>
+            <p>From the first introduction<br />to the last conversation.</p>
           </div>
-          <span>ZEC only</span>
+          <div class="program-grid">
+            <figure class="venue-photo">
+              <img
+                src="images/cpd/national-union-building-sixth-floor-dinner.webp"
+                width="1500"
+                height="1125"
+                alt="The National Union Building’s sixth-floor dining space, set for an evening event"
+                loading="lazy"
+              />
+              <figcaption>
+                <span
+                  >Above the everyday.<br /><strong
+                    >National Union Building, sixth floor.</strong
+                  ></span
+                ><a
+                  href="https://www.nationalunionbuildingdc.com/event-spaces#6thfloor"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Explore the National Union Building venue (opens in a new tab)"
+                  >↗</a
+                >
+              </figcaption>
+            </figure>
+            <ol class="timeline">
+              <li>
+                <div class="timeline-time">
+                  <span>01</span
+                  ><time datetime="2026-10-14T17:00:00-04:00"
+                    >5:00–6:30 PM</time
+                  >
+                </div>
+                <h3>Meet beyond your usual circle.</h3>
+                <p>
+                  A happy hour reception for cypherpunks, policymakers,
+                  technologists, and privacy advocates. Start with a drink and a
+                  conversation.
+                </p>
+              </li>
+              <li>
+                <div class="timeline-time">
+                  <span>02</span
+                  ><time datetime="2026-10-14T18:30:00-04:00"
+                    >6:30 PM / Dinner &amp; keynotes</time
+                  >
+                </div>
+                <h3>Private money meets the DC cypherpunk.</h3>
+                <p>
+                  A seated dinner with keynote addresses from
+                  <strong>Josh Swihart</strong>, CEO of ZODL, and
+                  <strong>Landon Zinda</strong>, Senior Advisor to the SEC’s
+                  Crypto Task Force and Counsel to the Chairman. Building the
+                  technology. Bringing its founding principles into the policy
+                  conversation.
+                </p>
+              </li>
+              <li>
+                <div class="timeline-time">
+                  <span>03</span><span>Following the keynotes</span>
+                </div>
+                <h3>Bring the conversation together.</h3>
+                <p>
+                  <strong>Josh and Landon</strong> join a fireside chat
+                  moderated by <strong>Julie Stitzel</strong>, Chief Policy
+                  Officer at Digital Currency Group (DCG). An evening built for
+                  exchange across technology and policy.
+                </p>
+              </li>
+            </ol>
+          </div>
         </div>
-        <iframe src="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6?embed=1" title="Cypherpunk Policy Dinner checkout for Cypherpunk Policy Dinner" style="width:100%;min-height:240px;border:0;display:block;overflow:hidden;" loading="lazy"></iframe>
-        <script>
-        (function () {
-          const script = document.currentScript;
-          const iframe = script && script.previousElementSibling;
-          if (!(iframe instanceof HTMLIFrameElement)) return;
-
-          const expectedOrigin = new URL(iframe.src).origin;
-
-          function handleMessage(event) {
-            if (event.origin !== expectedOrigin) return;
-            if (event.source !== iframe.contentWindow) return;
-
-            const data = event.data;
-            if (!data || data.source !== "zectix-embed") return;
-            if (data.type !== "resize" || typeof data.height !== "number") return;
-
-            iframe.style.height = Math.max(240, Math.ceil(data.height)) + "px";
-          }
-
-          window.addEventListener("message", handleMessage, false);
-        })();
-        </script>
-        <noscript>
-          <p class="cpd-checkout-fallback">JavaScript is required for the embedded checkout. <a href="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6">Open the ticket page on ZecTix</a>.</p>
-        </noscript>
+      </section>
+      <section
+        class="tickets section"
+        id="tickets"
+        aria-labelledby="tickets-heading"
+      >
+        <div class="container tickets-grid">
+          <div class="tickets-intro">
+            <p class="eyebrow">Your values deserve a seat</p>
+            <h2 id="tickets-heading">Be in the room.</h2>
+            <p class="ticket-lead">
+              For people who believe cryptocurrency should mean privacy,
+              self-custody, and open access to decentralized finance. If that’s
+              you, this is your table.
+            </p>
+            <div class="ticket-price">
+              <strong>$200</strong
+              ><span
+                >per person<br /><b>Payable exclusively in Zcash (ZEC)</b></span
+              >
+            </div>
+            <p>
+              Your ticket includes the happy hour reception, seated dinner,
+              keynote addresses, and fireside chat.
+            </p>
+            <p class="checkout-note">
+              ZecTix shows the exact ZEC amount and completes registration
+              through Luma.
+            </p>
+            <a
+              class="text-link"
+              href="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6"
+              target="_blank"
+              rel="noopener"
+              >Open checkout in a new window
+              <span aria-hidden="true">↗</span></a
+            >
+            <aside
+              class="government-attendance"
+              aria-labelledby="government-attendance-heading"
+            >
+              <h3 id="government-attendance-heading">
+                Government officials and staff are welcome.
+              </h3>
+              <p>
+                <strong>Complimentary admission is available</strong> to
+                government officials and staff, subject to applicable ethics
+                rules and any required approvals.
+              </p>
+              <p>
+                The Cypherpunk Policy Dinner is intended to qualify as a widely
+                attended event or gathering under applicable ethics rules.
+                Attendance, including acceptance of any complimentary admission,
+                is subject to your agency or office’s requirements and any
+                necessary approvals.
+              </p>
+              <p>
+                Please
+                <a
+                  href="mailto:admin@pgpz.org?subject=Cypherpunk%20Policy%20Dinner%20Government%20Admission"
+                  >contact PGPZ</a
+                >
+                for complimentary admission details or event information to
+                support your ethics review.
+              </p>
+            </aside>
+          </div>
+          <div class="checkout-shell">
+            <div class="checkout-heading">
+              <div>
+                <p class="eyebrow">Reserve your seat</p>
+                <h3>Cypherpunk Policy Dinner</h3>
+              </div>
+              <span>ZEC only</span>
+            </div>
+            <iframe
+              src="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6?embed=1"
+              title="Cypherpunk Policy Dinner ticket checkout"
+              style="
+                width: 100%;
+                min-height: 240px;
+                border: 0;
+                display: block;
+                overflow: hidden;
+              "
+              loading="lazy"
+            ></iframe>
+            <script>
+              (function () {
+                const script = document.currentScript;
+                const iframe = script && script.previousElementSibling;
+                if (!(iframe instanceof HTMLIFrameElement)) return;
+                const expectedOrigin = new URL(iframe.src).origin;
+                function handleMessage(event) {
+                  if (event.origin !== expectedOrigin) return;
+                  if (event.source !== iframe.contentWindow) return;
+                  const data = event.data;
+                  if (!data || data.source !== "zectix-embed") return;
+                  if (data.type !== "resize" || typeof data.height !== "number")
+                    return;
+                  iframe.style.height =
+                    Math.max(240, Math.ceil(data.height)) + "px";
+                }
+                window.addEventListener("message", handleMessage, false);
+              })();
+            </script>
+            <noscript
+              ><p class="checkout-fallback">
+                JavaScript is required for the embedded checkout.
+                <a href="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6"
+                  >Open the ticket page on ZecTix</a
+                >.
+              </p></noscript
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a
+            class="brand-link"
+            href="https://pgpz.org/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Pretty Good Policy for Zcash — visit PGPZ (opens in a new tab)"
+            ><img
+              src="images/cpd/brand/pgpz-primary-on-dark.svg"
+              width="1656"
+              height="750"
+              alt="Pretty Good Policy for Zcash (PGPZ)"
+              loading="lazy"
+          /></a>
+          <div>
+            <p>
+              Convened by
+              <a href="https://pgpz.org/" target="_blank" rel="noopener">PGPZ</a
+              >.<br />Programming in collaboration with Project Glitch.
+            </p>
+            <a class="summit-link" href="/"
+              >An associated event of the DC Privacy Summit
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            Pretty Good Policy (PGPZ) is an independent organization. It is not
+            an official Zcash or Zcash Foundation website, service, or product,
+            and is not affiliated with or endorsed by the Zcash Foundation.
+          </p>
+          <a href="/index.html#contact">Contact</a
+          ><span>© <span id="year">2026</span> DC Privacy Summit</span>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
-
-<footer id="footer">
-  <div class="container footer-grid">
-    <div>
-      <img loading="lazy" src="images/DCPrivacySummit_wordmark_white.svg" alt="DC Privacy Summit logo" style="max-width:220px">
-      <p style="margin-top:10px">Where Privacy, Security, and Digital Identity Converge</p>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/">&nbsp; DC Privacy Summit</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/cpd.html">&nbsp; Policy Dinner</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/agenda.html">&nbsp; Agenda</a></li>
-        <li><i class="fas fa-chevron-right" aria-hidden="true"></i><a href="/index.html#contact">&nbsp; Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:40px">&copy; <span id="year"></span> DC Privacy Summit. All rights reserved.</div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
-      navMenu.classList.toggle('active');
-    });
-  }
-</script>
-</body>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.getElementById("main-nav");
+      function closeMenu() {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open menu");
+        navMenu.classList.remove("active");
+      }
+      menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        menuToggle.setAttribute(
+          "aria-label",
+          expanded ? "Open menu" : "Close menu",
+        );
+        navMenu.classList.toggle("active", !expanded);
+      });
+      navMenu
+        .querySelectorAll("a")
+        .forEach((link) => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navMenu.classList.contains("active")) {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+    </script>
+  </body>
 </html>
