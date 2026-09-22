@@ -1,10 +1,10 @@
 # Cypherpunk Policy Dinner: PGPZ staging refresh
 
-Prepared September 11, 2026; speaker update September 21, 2026. Scope: `cpd.html`, its own stylesheet, and related assets. Production promotion remains a separate, user-reviewed action through the existing workflow.
+Prepared September 11, 2026. Scope: `cpd.html`, its own stylesheet, and related assets. Production promotion remains a separate, user-reviewed action through the existing workflow.
 
 ## Positioning
 
-PGPZ leads and convenes the event; Project Glitch remains a programming collaborator and source of cypherpunk perspective. The user supplied the keynote lineup and fireside format. The September 21 update introduces Landon Zinda as the "DC cypherpunk," alongside Josh Swihart, with Julie Stitzel moderating their fireside chat. This is editorial event positioning, not an official title. References to Landon's advocacy for privacy, open-source software, and permissionless DeFi are explicitly anchored to his past work at Coin Center; the page does not imply SEC endorsement of the event or its themes.
+PGPZ leads and convenes the event; Project Glitch remains a programming collaborator and source of cypherpunk perspective. The user supplied the keynote lineup and fireside format. The page presents privacy, self-custody, permissionless decentralized finance, and freedom to build as the event's themes; it does not attribute policy positions or endorsements to individual speakers.
 
 Existing date, venue, times, $200 price, ZEC-only payment, ZCG anchor sponsorship, ZecTix event URL, and origin/source-checked iframe resize behavior are retained. No program end time, seat availability, or exact keynote/fireside start times were invented.
 
@@ -28,15 +28,12 @@ Photo/source biography: https://consensus2026.coindesk.com/agenda/speaker/-josh-
 Asset: https://d2pasa6bkzkrjd.cloudfront.net/site/consensus2026/images/userfiles/speakers/663f6f6df06508bba1b397a2b615dabf.jpg.
 Saved as `images/cpd/josh-swihart.jpg`, 600×600. Conference speaker portrait; no explicit reusable license or required attribution found. The repository also had a lower-resolution 2026 portrait.
 
-### Landon Zinda — Senior Advisor, SEC Crypto Task Force; Counsel to the Chairman
+### Senator Bernie Moreno — U.S. Senator for Ohio
 
-Current combined title: https://gbaglobal.org/blog/2026/05/19/digital-asset-policy-leaders-meet-in-washington-dc/ and https://www.thinkingcrypto.com/the-secs-new-crypto-tokenization-guidance-explained-with-landon-zinda/.
-Official task force appointment: https://www.sec.gov/newsroom/press-releases/2025-49; continued task force service acknowledged August 18, 2026: https://www.sec.gov/newsroom/speeches-statements/atkins-statement-regulation-crypto-assets-081826.
-Career and portrait source: https://coincenter.org/people/landon-zinda/. His prior roles include Coin Center Policy Director, Senate Banking Committee Counsel, and Legislative Director for Congressman Tom Emmer. The Coin Center profile's Policy Director heading is historical, not his current title.
-Authored work supporting the event's framing: https://coincenter.org/how-congress-should-and-should-not-approach-defi/ and https://coincenter.org/in-an-effort-to-close-perceived-loopholes-treasury-recommends-massive-expansion-of-warrantless-surveillance-and-power-to-sanction-open-source-software/.
-Asset: https://coincenter.org/wp-content/uploads/2023/03/Landon.jpg.
-Saved unmodified as `images/cpd/landon-zinda.jpg`, 2367×2367. Actual Coin Center portrait; no explicit reusable license or required attribution found. The supplied LinkedIn profile could not be retrieved; title and biography were checked against the above primary sources.
-The source composition and generated social card use the updated lineup and the "DC cypherpunk" caption.
+Title source: https://www.moreno.senate.gov/.
+Photo source: https://commons.wikimedia.org/wiki/File:Sen._Bernie_Moreno_official_photo,_119th_Congress_(HR).jpg.
+Asset: https://upload.wikimedia.org/wikipedia/commons/e/e0/Sen._Bernie_Moreno_official_photo%2C_119th_Congress_%28HR%29.jpg.
+Saved as `images/cpd/bernie-moreno.jpg`, 2400×3000. Public-domain official U.S. Senate photograph by Rebecca Hammel / U.S. Senate Photographic Services.
 
 ### Julie Stitzel — Chief Policy Officer, DCG
 
@@ -52,5 +49,3 @@ The original ZecTix embed returns 404 for localhost/unapproved or missing referr
 Social preview is a browser-rendered HTML composition using the actual brand artwork and photographs. Its production-host Open Graph URL becomes available on production only when this reviewed release is promoted.
 
 Local browser checks passed at 320, 375, 390, 640, 768, 900, 1024, and 1440px: no horizontal overflow, loaded speaker images, valid section anchors. Mobile menu, Escape dismissal, automatic close after navigation, speaker link, and ticket CTA passed. Desktop/mobile screenshots inspected. Supplied brand SVGs verified byte-for-byte; original checkout handler verified unchanged apart from whitespace. HTML/CSS formatting and JavaScript syntax passed.
-
-September 21 speaker update: repeated browser checks at 320, 390, 768, 1024, and 1440px with no horizontal overflow, both keynote portraits loaded, and mobile speaker navigation working. Desktop/mobile speaker and introduction screenshots and the regenerated 1200×630 social card were visually reviewed. Page scripts, ticket iframe, government admission aside, and PGPZ link destinations were verified unchanged. Speaker names, program, metadata, and social composition all use the new lineup.
