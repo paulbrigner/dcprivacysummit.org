@@ -982,12 +982,15 @@ a:focus-visible {
 
 .sponsor-card {
   display: flex;
+  box-sizing: border-box;
+  width: min(100%, 280px);
   min-height: 180px;
   align-items: center;
   justify-content: center;
+  justify-self: center;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.92);
-  padding: clamp(10px, 1.5vw, 18px);
+  padding: 0;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(16, 34, 72, 0.08);
@@ -999,7 +1002,7 @@ a:focus-visible {
 }
 
 .sponsor-tier--premiere .sponsor-card {
-  min-height: 220px;
+  min-height: 180px;
 }
 
 .sponsor-card:hover,
