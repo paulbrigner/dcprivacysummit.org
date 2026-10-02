@@ -1025,6 +1025,10 @@ a:focus-visible {
   background: transparent;
   box-shadow: none;
 }
+.sponsor-grid .sponsor-card img.sponsor-logo--blockchain-association {
+  transform: none;
+}
+
 .sponsor-cta {
   margin-top: 40px;
   display: flex;
