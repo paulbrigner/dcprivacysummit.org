@@ -354,7 +354,7 @@ h1 {
   object-position: center 24%;
 }
 .portrait-zinda img {
-  object-position: center 20%;
+  object-position: center top;
 }
 .portrait-label {
   position: absolute;
