@@ -1025,7 +1025,8 @@ a:focus-visible {
   background: transparent;
   box-shadow: none;
 }
-.sponsor-grid .sponsor-card img.sponsor-logo--blockchain-association {
+.sponsor-grid .sponsor-card img.sponsor-logo--blockchain-association,
+.sponsor-grid .sponsor-card img.sponsor-logo--fit {
   transform: none;
 }
 
