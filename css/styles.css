@@ -781,6 +781,16 @@ a:focus-visible {
   object-position: 60% center;
 }
 
+.speaker-card .speaker-card__portrait {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.speaker-card .speaker-card__portrait img {
+  height: 100%;
+  object-fit: cover;
+}
+
 .speaker-card img.speaker-card__image--ian {
   object-position: center 42%;
 }
