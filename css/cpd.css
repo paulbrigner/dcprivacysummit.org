@@ -299,6 +299,18 @@ h1 {
   gap: 22px;
   margin-top: 29px;
 }
+.sold-out-badge {
+  display: inline-flex;
+  padding: 17px 25px;
+  border: 1px solid var(--soft-gold);
+  color: var(--ink);
+  background: var(--soft-gold);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 .payment-note {
   color: #b6c8bf;
   font-size: 11px;
@@ -694,6 +706,27 @@ strong {
   font-size: 13px;
   color: #c2cfca;
   line-height: 1.8;
+}
+.attendance-details {
+  min-width: 0;
+  padding: clamp(25px, 4vw, 48px);
+  background: var(--paper);
+  color: var(--ink);
+}
+.attendance-details .eyebrow {
+  color: var(--slate);
+}
+.attendance-details h3 {
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+.attendance-details h3 + p,
+.attendance-details p + p {
+  margin-top: 20px;
+}
+.attendance-details a:focus-visible {
+  outline-color: var(--teal);
 }
 .checkout-note {
   margin-top: 12px;
