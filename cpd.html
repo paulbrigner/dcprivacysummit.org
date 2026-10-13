@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="PGPZ presents the Cypherpunk Policy Dinner. Josh Swihart meets DC cypherpunk Landon Zinda, with Julie Stitzel moderating. October 14, 2026, Washington, DC. Privacy, policy, and a seat at the table. $200, ZEC only."
+      content="Sold out — registration is closed for the PGPZ Cypherpunk Policy Dinner. Josh Swihart meets DC cypherpunk Landon Zinda, with Julie Stitzel moderating. October 14, 2026, Washington, DC."
     />
     <meta
       property="og:title"
-      content="Cypherpunks, meet Washington. | PGPZ Cypherpunk Policy Dinner"
+      content="Sold out | PGPZ Cypherpunk Policy Dinner"
     />
     <meta
       property="og:description"
-      content="From building private money to shaping policy: keynotes from Josh Swihart and Landon Zinda, followed by a fireside chat with Julie Stitzel. Led by PGPZ, with Project Glitch programming. October 14, 2026. $200, ZEC only."
+      content="The Cypherpunk Policy Dinner is sold out. Registration is closed. Keynotes from Josh Swihart and Landon Zinda, followed by a fireside chat with Julie Stitzel. Led by PGPZ, with Project Glitch programming. October 14, 2026."
     />
     <meta
       property="og:image"
@@ -64,7 +64,7 @@
     />
     <link href="./css/cpd.css" rel="stylesheet" />
     <title>
-      Cypherpunk Policy Dinner — Presented by PGPZ | October 14, 2026
+      Sold out | Cypherpunk Policy Dinner — Presented by PGPZ | October 14, 2026
     </title>
   </head>
   <body class="cpd-page">
@@ -96,7 +96,7 @@
           <a href="#program">The evening</a>
           <a href="/">DC Privacy Summit <span aria-hidden="true">↗</span></a>
           <a class="button button-small" href="#tickets"
-            >Take your seat <span aria-hidden="true">↗</span></a
+            >Sold out</a
           >
         </nav>
       </div>
@@ -127,10 +127,9 @@
                 transact.
               </p>
               <div class="hero-actions">
-                <a class="button" href="#tickets"
-                  >Take your seat — $200 <span aria-hidden="true">↗</span></a
+                <span class="sold-out-badge">Sold out</span
                 ><span class="payment-note"
-                  >Pay in Zcash.<br />Put privacy into practice.</span
+                  >Registration is closed.<br />Thank you for your interest.</span
                 >
               </div>
               <p class="programming-credit">
@@ -382,46 +381,25 @@
       >
         <div class="container tickets-grid">
           <div class="tickets-intro">
-            <p class="eyebrow">Your values deserve a seat</p>
-            <h2 id="tickets-heading">Be in the room.</h2>
+            <p class="eyebrow">Registration closed</p>
+            <h2 id="tickets-heading">Sold out.</h2>
             <p class="ticket-lead">
-              For people who believe cryptocurrency should mean privacy,
-              self-custody, and open access to decentralized finance. If that’s
-              you, this is your table.
-            </p>
-            <div class="ticket-price">
-              <strong>$200</strong
-              ><span
-                >per person<br /><b>Payable exclusively in Zcash (ZEC)</b></span
-              >
-            </div>
-            <p>
-              Your ticket includes the happy hour reception, seated dinner,
-              keynote addresses, and fireside chat.
+              Every seat at the table is spoken for. Thank you for the interest
+              in financial privacy, open finance, and cypherpunk policy.
             </p>
             <p class="checkout-note">
-              ZecTix shows the exact ZEC amount and completes registration
-              through Luma.
+              Registration for the Cypherpunk Policy Dinner is closed.
             </p>
-            <a
-              class="text-link"
-              href="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6"
-              target="_blank"
-              rel="noopener"
-              >Open checkout in a new window
-              <span aria-hidden="true">↗</span></a
-            >
             <aside
               class="government-attendance"
               aria-labelledby="government-attendance-heading"
             >
               <h3 id="government-attendance-heading">
-                Government officials and staff are welcome.
+                For registered government attendees.
               </h3>
               <p>
-                <strong>Complimentary admission is available</strong> to
-                government officials and staff, subject to applicable ethics
-                rules and any required approvals.
+                Attendance by government officials and staff is subject to
+                applicable ethics rules and any required approvals.
               </p>
               <p>
                 The Cypherpunk Policy Dinner is intended to qualify as a widely
@@ -433,62 +411,27 @@
               <p>
                 Please
                 <a
-                  href="mailto:admin@pgpz.org?subject=Cypherpunk%20Policy%20Dinner%20Government%20Admission"
+                  href="mailto:admin@pgpz.org?subject=Cypherpunk%20Policy%20Dinner%20Government%20Attendance"
                   >contact PGPZ</a
                 >
-                for complimentary admission details or event information to
-                support your ethics review.
+                for event information to support your ethics review.
               </p>
             </aside>
           </div>
-          <div class="checkout-shell">
-            <div class="checkout-heading">
-              <div>
-                <p class="eyebrow">Reserve your seat</p>
-                <h3>Cypherpunk Policy Dinner</h3>
-              </div>
-              <span>ZEC only</span>
-            </div>
-            <iframe
-              src="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6?embed=1"
-              title="Cypherpunk Policy Dinner ticket checkout"
-              style="
-                width: 100%;
-                min-height: 240px;
-                border: 0;
-                display: block;
-                overflow: hidden;
-              "
-              loading="lazy"
-            ></iframe>
-            <script>
-              (function () {
-                const script = document.currentScript;
-                const iframe = script && script.previousElementSibling;
-                if (!(iframe instanceof HTMLIFrameElement)) return;
-                const expectedOrigin = new URL(iframe.src).origin;
-                function handleMessage(event) {
-                  if (event.origin !== expectedOrigin) return;
-                  if (event.source !== iframe.contentWindow) return;
-                  const data = event.data;
-                  if (!data || data.source !== "zectix-embed") return;
-                  if (data.type !== "resize" || typeof data.height !== "number")
-                    return;
-                  iframe.style.height =
-                    Math.max(240, Math.ceil(data.height)) + "px";
-                }
-                window.addEventListener("message", handleMessage, false);
-              })();
-            </script>
-            <noscript
-              ><p class="checkout-fallback">
-                JavaScript is required for the embedded checkout.
-                <a href="https://zectix.com/c/cpd/events/evt-G6FkVg0Yo5Pc1j6"
-                  >Open the ticket page on ZecTix</a
-                >.
-              </p></noscript
-            >
-          </div>
+          <aside class="attendance-details" aria-labelledby="attendee-heading">
+            <p class="eyebrow">Already registered?</p>
+            <h3 id="attendee-heading">We’ll see you at the table.</h3>
+            <p><strong>Wednesday, October 14, 2026</strong></p>
+            <p>Reception: 5:00 PM<br />Dinner and program: 6:30 PM<br />Eastern Time</p>
+            <p>
+              National Union Building · Sixth floor<br />
+              918 F Street NW, Washington, DC
+            </p>
+            <p>
+              For questions about your existing registration,
+              <a href="mailto:admin@pgpz.org?subject=Cypherpunk%20Policy%20Dinner%20Existing%20Registration">contact PGPZ</a>.
+            </p>
+          </aside>
         </div>
       </section>
     </main>
